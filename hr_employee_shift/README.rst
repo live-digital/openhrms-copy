@@ -1,4 +1,4 @@
-OHRMS Employee Shift v16
+OHRMS Employee Shift v15
 ========================
 
 Easily create, manage, and track employee shift schedules
@@ -14,7 +14,7 @@ Tech
 
 Installation
 ============
-- www.odoo.com/documentation/16.0/setup/install.html
+- www.odoo.com/documentation/10.0/setup/install.html
 - Install our custom addon
 
 License
@@ -36,7 +36,6 @@ Author
 Developer:  Saritha Sahadevan, saritha@cybrosys.in
             Version 14: Muhammed Nafih  odoo@cybrosys.com
             Version 15: Ajay odoo@cybrosys.com
-            Version 16: Sumith Sivan odoo@cybrosys.com
 
 Maintainer
 ----------

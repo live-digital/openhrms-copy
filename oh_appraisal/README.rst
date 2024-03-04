@@ -1,4 +1,4 @@
-OHRMS Employee Appraisal v16
+OHRMS Employee Appraisal v15
 ============================
 
 Roll out appraisal plans and get the best of your workforce
@@ -14,7 +14,7 @@ Tech
 
 Installation
 ============
-- www.odoo.com/documentation/16.0/setup/install.html
+- www.odoo.com/documentation/15.0/setup/install.html
 - Install our custom addon
 
 License
@@ -34,7 +34,6 @@ Author
 ------
 
 Developer: Saritha Sahadevan, saritha@cybrosys.in
-Developer: Athira Premanand, athirap@cybrosys.info
 
 Maintainer
 ----------

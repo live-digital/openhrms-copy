@@ -14,6 +14,17 @@
     font-weight: bold;
     font-size: larger;
 }
+.reminder-dropdown {
+    .o-flex(0, 1, auto);
+    background: #FFFFFF;
+    max-height: 400px;
+    min-height: 50px;
+    overflow-y: auto;
+
+    @media (max-width: @screen-xs-max) {
+        max-height: none;
+    }
+
 .detail-client-address-country {
    color: black;
  }

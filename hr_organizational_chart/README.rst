@@ -10,7 +10,7 @@ Depends
 
 Installation
 ============
-- www.odoo.com/documentation/16.0/setup/install.html
+- www.odoo.com/documentation/15.0/setup/install.html
 - Install our custom addon
 
 Credits
@@ -22,7 +22,6 @@ Author
 
 Developers: v14.0 Muhammed P <odoo@cybrosys.com>
 Developers: v15.0 Mily <odoo@cybrosys.com>
-Developers: v16.0 Athira Premanand <odoo@cybrosys.com>
 
 Maintainer
 ----------

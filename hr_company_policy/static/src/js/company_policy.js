@@ -3,7 +3,7 @@ odoo.define('hr_company_policy.CompanyPolicy', function (require) {
 console.log("Company policy");
 
 var HrDashboard = require('hrms_dashboard.DashboardRewrite');
-// var AbstractAction = require('web.AbstractAction');
+var AbstractAction = require('web.AbstractAction');
 var core = require('web.core');
 var session = require('web.session');
 var _t = core._t;
@@ -28,8 +28,11 @@ var CompanyPolicy = HrDashboard.include({
         'click #broad_factor_pdf': 'generate_broad_factor_report',
     },
 
-    company_policy: function(e){
+
+    company_policy: function(e){console.log("Company_policy")
+
 //        returning company policy related field added wizard view.
+
         var self = this;
         self.do_action({
             name: _t("Company Policy"),

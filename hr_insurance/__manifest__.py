@@ -1,10 +1,10 @@
-# -- coding: utf-8 --
+# -*- coding: utf-8 -*-
 ###################################################################################
 #    A part of Open HRMS Project <https://www.openhrms.com>
 #
 #    Cybrosys Technologies Pvt. Ltd.
-#    Copyright (C) 2022-TODAY Cybrosys Technologies (<https://www.cybrosys.com>).
-#    Author: Cybrosys (<https://www.cybrosys.com>)
+#    Copyright (C) 2021-TODAY Cybrosys Technologies (<https://www.cybrosys.com>).
+#    Author: Treesa Maria Jude  (<https://www.cybrosys.com>)
 #
 #    This program is free software: you can modify
 #    it under the terms of the GNU Affero General Public License (AGPL) as
@@ -20,9 +20,10 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 ###################################################################################
+
 {
     'name': 'Open HRMS Employee Insurance',
-    'version': '16.0.1.0.0',
+    'version': '15.0.1.0.0',
     'summary': """Employee Insurance Management for Open HRMS.""",
     'description': """Manages insurance amounts for employees to be deducted from salary""",
     'category': 'Generic Modules/Human Resources',

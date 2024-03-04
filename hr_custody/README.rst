@@ -17,7 +17,7 @@ Tech
 
 Installation
 ============
-- www.odoo.com/documentation/16.0/setup/install.html
+- www.odoo.com/documentation/13.0/setup/install.html
 - Install our custom addon
 
 License
@@ -40,7 +40,6 @@ Developers: Avinash Nk <odoo@cybrosys.com>
             Jesni Banu <odoo@cybrosys.com>
             Version 14: Muhammed Nafih <odoo@cybrosys.com>
             Version 15:Mily Shajan <odoo@cybrosys.com>
-            Version 16:Aiswarya M<odoo@cybrosys.com>
 
 Maintainer
 ----------

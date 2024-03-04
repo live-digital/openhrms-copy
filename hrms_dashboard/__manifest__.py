@@ -3,7 +3,7 @@
 #    A part of Open HRMS Project <https://www.openhrms.com>
 #
 #    Cybrosys Technologies Pvt. Ltd.
-#    Copyright (C) 2022-TODAY Cybrosys Technologies (<https://www.cybrosys.com>).
+#    Copyright (C) 2018-TODAY Cybrosys Technologies (<https://www.cybrosys.com>).
 #    Author: Aswani PC (<https://www.cybrosys.com>)
 #
 #    This program is free software: you can modify
@@ -22,7 +22,7 @@
 ###################################################################################
 {
     'name': "Open HRMS - HR Dashboard",
-    'version': '16.0.1.0.1',
+    'version': '15.0.1.1.0',
     'summary': """Open HRMS - HR Dashboard""",
     'description': """Open HRMS - HR Dashboard""",
     'category': 'Generic Modules/Human Resources',
@@ -31,10 +31,8 @@
     'company': 'Cybrosys Techno Solutions',
     'maintainer': 'Cybrosys Techno Solutions',
     'website': "https://www.openhrms.com",
-    'depends': ['hr', 'hr_holidays', 'hr_timesheet', 'hr_payroll_community',
-                'hr_attendance', 'hr_timesheet_attendance',
-                'hr_recruitment', 'hr_resignation', 'event',
-                'hr_reward_warning', 'base'],
+    'depends': ['hr', 'hr_holidays', 'hr_timesheet', 'hr_payroll_community', 'hr_attendance', 'hr_timesheet_attendance',
+                'hr_recruitment', 'hr_resignation', 'event', 'hr_reward_warning','base'],
     'external_dependencies': {
         'python': ['pandas'],
     },
@@ -45,10 +43,14 @@
     ],
     'assets': {
         'web.assets_backend': [
+
             'hrms_dashboard/static/src/css/hrms_dashboard.css',
             'hrms_dashboard/static/src/css/lib/nv.d3.css',
             'hrms_dashboard/static/src/js/hrms_dashboard.js',
             'hrms_dashboard/static/src/js/lib/d3.min.js',
+
+        ],
+        'web.assets_qweb': [
             'hrms_dashboard/static/src/xml/hrms_dashboard.xml',
         ],
     },

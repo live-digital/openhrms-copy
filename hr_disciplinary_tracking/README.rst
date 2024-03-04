@@ -1,4 +1,4 @@
-OHRMS Disciplinary Action v16
+OHRMS Disciplinary Action v15
 ==============================
 
 Track the Disciplinary actions of Employees
@@ -15,7 +15,7 @@ Tech
 
 Installation
 ============
-- www.odoo.com/documentation/16.0/setup/install.html
+- www.odoo.com/documentation/15.0/setup/install.html
 - Install our custom addon
 
 
@@ -33,7 +33,6 @@ Author
 Developer: Ajmal J K @ cybrosys
           Version 14: Muhammed Nafih @cybrosys
           Version 15 : Mily Shajan @cybrosys
-          Version 16: Aiswarya @cybrosys
 
 Maintainer
 ----------

@@ -1,11 +1,9 @@
-# -- coding: utf-8 --
+# -*- coding: utf-8 -*-
 ###################################################################################
-#    A part of Open HRMS Project <https://www.openhrms.com>
 #
 #    Cybrosys Technologies Pvt. Ltd.
-#    Copyright (C) 2022-TODAY Cybrosys Technologies (<https://www.cybrosys.com>).
-#    Author: Cybrosys (<https://www.cybrosys.com>)
-#
+#    Copyright (C) 2021-TODAY Cybrosys Technologies(<https://www.cybrosys.com>).
+#    Author: Tintuk Tomin(<https://www.cybrosys.com>)
 #    This program is free software: you can modify
 #    it under the terms of the GNU Affero General Public License (AGPL) as
 #    published by the Free Software Foundation, either version 3 of the
@@ -22,7 +20,7 @@
 ###################################################################################
 {
     'name': 'Open HRMS Employee Background Verification',
-    'version': '16.0.1.0.0',
+    'version': '15.0.1.0.0',
     'summary': """Verify the background details of an Employee """,
     'live_test_url': 'https://youtu.be/mH5SzuKHa30',
     'category': 'Generic Modules/Human Resources',

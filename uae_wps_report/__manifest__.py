@@ -24,7 +24,7 @@
 
 {
     'name': ' WPS Report Generation for UAE',
-    'version': '16.0.1.0.0',
+    'version': '15.0.1.0.0',
     'summary': 'Open HRMS Wps Payroll System For UAE',
     'category': 'Generic Modules/Human Resources',
     'author': 'Cybrosys Techno solutions,Open HRMS',

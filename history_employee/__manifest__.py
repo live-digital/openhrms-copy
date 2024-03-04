@@ -1,10 +1,10 @@
-# -- coding: utf-8 --
+# -*- coding: utf-8 -*-
 ###################################################################################
 #    A part of Open HRMS Project <https://www.openhrms.com>
 #
 #    Cybrosys Technologies Pvt. Ltd.
-#    Copyright (C) 2022-TODAY Cybrosys Technologies (<https://www.cybrosys.com>).
-#    Author: Cybrosys (<https://www.cybrosys.com>)
+#    Copyright (C) 2021-TODAY Cybrosys Technologies(<https://www.cybrosys.com>).
+#    Author: Binu M Baiju(<https://www.cybrosys.com>)
 #
 #    This program is free software: you can modify
 #    it under the terms of the GNU Affero General Public License (AGPL) as
@@ -22,7 +22,7 @@
 ###################################################################################
 {
     'name': 'Open HRMS Employee History',
-    'version': '16.0.1.0.0',
+    'version': '15.0.1.0.0',
     'summary': """History Of Employees In Your Company""",
     'description': 'Track the History of Employees in your Company',
     'category': 'Generic Modules/Human Resources',
@@ -32,11 +32,10 @@
     'maintainer': 'Cybrosys Techno Solutions',
     'website': "https://www.openhrms.com",
     'depends': ['hr', 'hr_contract', 'oh_employee_creation_from_user'],
-    'data': [
-        'views/history_views.xml',
-        'views/employee_history.xml',
-        'security/ir.model.access.csv',
-    ],
+    'data': ['views/employee_history.xml',
+             'views/history_views.xml',
+             'security/ir.model.access.csv'
+             ],
     'images': ['static/description/banner.png'],
     'license': 'AGPL-3',
     'installable': True,

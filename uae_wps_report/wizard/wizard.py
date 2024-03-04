@@ -46,11 +46,9 @@ class Wizard(models.TransientModel):
         company = self.env['res.company']._company_default_get('wps.wizard')
         if not company.company_registry:
             raise UserError(_('Please Set Company Registry Number First'))
-        employees = self.env['hr.employee'].search([])
-        # print(users.mapped('labour_card_number'))
+        users = self.env['hr.employee'].search([])
         flags = {'labour_card_number': True, 'salary_card_number': True, 'agent_id': True}
-        print(flags)
-        for user in employees:
+        for user in users:
             if not user.labour_card_number:
                 flags['labour_card_number'] = False
             if not user.salary_card_number:
@@ -88,7 +86,7 @@ class Wizard(models.TransientModel):
         self.report_file = company.employer_id + date.strftime("%y%m%d%H%M%S")
         if not company.bank_ids:
             raise UserError(_('Configure Your Bank In Accounting Dashboard'))
-
+        
         datas = {
             'context': self._context,
             'date': date,
@@ -121,15 +119,10 @@ class Wizard(models.TransientModel):
                 ids = ids + ',' + str(slip.id)
             else:
                 ids = ids + str(slip.id)
-        language = self.env.context['lang']
-        print(language)
-        # net_salary = "'{\"" + language + "\": " + "\"Net Salary" + "\"}'"
-        # print(net_salary, "jsonp")
         query = """select hr_employee.id,labour_card_number, salary_card_number, agent_id, hr_payslip_line.amount 
-                    from hr_employee join hr_payslip_line 
-                    on hr_employee.id = hr_payslip_line.employee_id 
-                    where hr_payslip_line.name = (""" + "'{\"" + language + "\": " + "\"Net Salary" + "\"}'" + """) and 
-                    hr_payslip_line.slip_id in(""" + ids + """) """
+from hr_employee join hr_payslip_line 
+on hr_employee.id = hr_payslip_line.employee_id 
+where hr_payslip_line.name = 'Net Salary' and hr_payslip_line.slip_id in(""" + ids + """)"""
         cr.execute(query)
         data = cr.fetchall()
         return data
@@ -142,6 +135,7 @@ class Wizard(models.TransientModel):
         total_days = sum(rec.number_of_days for rec in days)
 
         return total_days
+
 
     def get_leaves(self, emp_id, start, end):
         leaves = self.env['hr.leave'].search(['&', ('employee_id', '=', emp_id)

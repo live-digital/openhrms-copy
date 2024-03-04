@@ -1,6 +1,6 @@
-## Module hr_gratuity_settlement
+## Module hr_gratuity
 
-#### 05.11.2022
-#### Version 16.0.1.0.0
+#### 15.12.2021
+#### Version 15.0.1.0.0
 ##### ADD
 - Initial Commit

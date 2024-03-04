@@ -1,4 +1,4 @@
-OHRMS Employee Insurance Management v16
+OHRMS Employee Insurance Management v15
 =======================================
 
 Employee insurance management for Open HRMS.
@@ -14,7 +14,7 @@ Tech
 
 Installation
 ============
-- www.odoo.com/documentation/16.0/setup/install.html
+- www.odoo.com/documentation/13.0/setup/install.html
 - Install our custom addon
 
 

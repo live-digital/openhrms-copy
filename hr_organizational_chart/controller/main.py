@@ -1,10 +1,10 @@
-# -- coding: utf-8 --
+# -*- coding: utf-8 -*-
 ###################################################################################
-#    A part of Open HRMS Project <https://www.openhrms.com>
+#    A part of OpenHRMS Project <https://www.openhrms.com>
 #
 #    Cybrosys Technologies Pvt. Ltd.
-#    Copyright (C) 2022-TODAY Cybrosys Technologies (<https://www.cybrosys.com>).
-#    Author: Cybrosys (<https://www.cybrosys.com>)
+#    Copyright (C) 2018-TODAY Cybrosys Technologies (<https://www.cybrosys.com>).
+#    Author: Cybrosys Technologies (<https://www.cybrosys.com>)
 #
 #    This program is free software: you can modify
 #    it under the terms of the GNU Affero General Public License (AGPL) as
@@ -47,8 +47,7 @@ class EmployeeChart(http.Controller):
             return key
         elif len(employees) == 0:
             raise UserError(
-                "Don't need to set manager to an employee at the top of the "
-                "chart")
+                "Should not have manager for the employee in the top of the chart")
         else:
             for emp in employees:
                 names.append(emp.name)

@@ -1,4 +1,4 @@
-Open HRMS Overtime v16
+Open HRMS Overtime v15
 ======================
 Helps you to manage Employee Overtime.
 
@@ -9,7 +9,7 @@ Tech
 
 Installation
 ============
-- www.odoo.com/documentation/16.0/setup/install.html
+- www.odoo.com/documentation/15.0/setup/install.html
 - Install our custom addon
 
 

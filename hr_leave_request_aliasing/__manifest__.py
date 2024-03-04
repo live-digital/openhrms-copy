@@ -3,7 +3,7 @@
 #    A part of Open HRMS Project <https://www.openhrms.com>
 #
 #    Cybrosys Technologies Pvt. Ltd.
-#    Copyright (C) 2022-TODAY Cybrosys Technologies (<https://www.cybrosys.com>).
+#    Copyright (C) 2021-TODAY Cybrosys Technologies (<https://www.cybrosys.com>).
 #    Author: Jesni Banu (<https://www.cybrosys.com>)
 #
 #    This program is free software: you can modify
@@ -22,7 +22,7 @@
 ###################################################################################
 {
     'name': 'Open HRMS Leave Request Aliasing',
-    'version': '16.0.1.0.0',
+    'version': '15.0.1.1.0',
     'summary': """Allows You To Create Leave Request Automatically From Incoming Mails""",
     'description': 'This module allows you to create leave request directly from incoming mails.',
     'live_test_url': 'https://youtu.be/jQFAP20k_Wc',

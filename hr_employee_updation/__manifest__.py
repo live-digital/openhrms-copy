@@ -3,8 +3,8 @@
 #    A part of Open HRMS Project <https://www.openhrms.com>
 #
 #    Cybrosys Technologies Pvt. Ltd.
-#    Copyright (C) 2022-TODAY Cybrosys Technologies (<https://www.cybrosys.com>)
-#    Author: Athira Premanand(<https://www.cybrosys.com>)
+#    Copyright (C) 2021-TODAY Cybrosys Technologies (<https://www.cybrosys.com>)
+#    Author: Hajaj Roshan(<https://www.cybrosys.com>)
 #
 #    This program is free software: you can modify
 #    it under the terms of the GNU Affero General Public License (AGPL) as
@@ -22,7 +22,7 @@
 ###############################################################################
 {
     'name': 'Open HRMS Employee Info',
-    'version': '16.0.1.0.0',
+    'version': '15.0.1.1.0',
     'summary': """Adding Advanced Fields In Employee Master""",
     'description': 'This module helps you to add more information in employee records.',
     'category': 'Generic Modules/Human Resources',

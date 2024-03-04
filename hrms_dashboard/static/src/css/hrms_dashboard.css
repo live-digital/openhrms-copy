@@ -74,12 +74,12 @@ overflow: auto !important;
   color: #00438b; }
 
 .mb-0{
-    font-size: 1.083rem;
+    font-size: 20px;
     position: relative;
     text-align: center;
 }
 .mb-0 .dash-title {
-    font-size: 1.083rem;
+    font-size: 20px;
     text-align: center;
     color: rgba(255, 255, 255, 0.81);
 }

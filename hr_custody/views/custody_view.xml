@@ -48,7 +48,7 @@
                                 <field name="product_id"
                                        attrs="{'invisible': [('property_selection', '!=', 'product')]}"/>
                                 <field name="company_id" options="{'no_create': True}"
-                                      />
+                                       groups="base.group_multi_company"/>
                             </group>
                         </group>
                         <notebook>
@@ -139,7 +139,7 @@
                                 <field name="renew_rejected_reason"
                                        attrs="{'invisible': ['|',('renew_reject','=',False),('state','not in',('approved'))]}"/>
                                 <field name="company_id" options="{'no_create': True}"
-                                       />
+                                       groups="base.group_multi_company"/>
                             </group>
                         </group>
                         <notebook>
@@ -243,6 +243,3 @@
                   name="Property" sequence="5" groups="hr.group_hr_manager"/>
     </data>
 </odoo>
-
-<!--groups="base.group_multi_company"-->
-<!-- groups="base.group_multi_company"-->

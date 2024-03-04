@@ -1,4 +1,4 @@
-Open HRMS Reminders Todo V16
+Open HRMS Reminders Todo V15
 ============================
 
 HR Reminder For OHRMS
@@ -32,7 +32,6 @@ Author
 Developer: Treesa Maria Jude @ cybrosys
 	V14 - Naveen V @ cybrosys, odoo@cybrosys.in
 	V15 - Mily @ cybrosys, odoo@cybrosys.in
-    V16 - Sajna @ cybrosys, odoo@cybrosys.in
 
 Maintainer
 ----------

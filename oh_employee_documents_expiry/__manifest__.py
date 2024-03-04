@@ -3,7 +3,7 @@
 #    A part of Open HRMS Project <https://www.openhrms.com>
 #
 #    Cybrosys Technologies Pvt. Ltd.
-#    Copyright (C) 2022-TODAY Cybrosys Technologies (<https://www.cybrosys.com>).
+#    Copyright (C) 2020-TODAY Cybrosys Technologies (<https://www.cybrosys.com>).
 #    Author: Nilmar Shereef (<https://www.cybrosys.com>)
 #
 #    This program is free software: you can modify
@@ -22,7 +22,7 @@
 ###################################################################################
 {
     'name': 'Open HRMS Employee Documents',
-    'version': '16.0.1.0.2',
+    'version': '15.0.1.1.0',
     'summary': """Manages Employee Documents With Expiry Notifications.""",
     'description': """OH Addon: Manages Employee Related Documents with Expiry Notifications.""",
     'live_test_url': 'https://youtu.be/4fe5tzAG8Ng',

@@ -4,7 +4,7 @@
 #
 #    Cybrosys Technologies Pvt. Ltd.
 #    Copyright (C) 2018-TODAY Cybrosys Technologies (<https://www.cybrosys.com>).
-#    Author: Athira Premanand (<https://www.cybrosys.com>)
+#    Author: Jesni Banu (<https://www.cybrosys.com>)
 #
 #    This program is free software: you can modify
 #    it under the terms of the GNU Affero General Public License (AGPL) as
@@ -20,7 +20,7 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 ###################################################################################
-from odoo import models, fields, api
+from odoo import models, fields
 
 
 class HrAttendanceMultiCompany(models.Model):
@@ -34,13 +34,7 @@ class HrLeaveMultiCompany(models.Model):
     _inherit = 'hr.leave'
 
     company_id = fields.Many2one('res.company', 'Company', copy=False, readonly=True, help="Company",
-                                 default=lambda self: self.env.user.company_id.id)
-    @api.onchange('name')
-    def dfgb(self):
-        print(self.env.user.company_id)
-
-
-
+                                 default=lambda self: self.env.user.company_id)
 
 
 class HrPayslipMultiCompany(models.Model):

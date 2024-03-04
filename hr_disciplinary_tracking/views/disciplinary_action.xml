@@ -49,11 +49,11 @@
                         <button name="explanation_function" type="object" string="Submit" class="oe_highlight"
                                 states="explain"/>
                         <button name="action_function" type="object" string="Validate Action" states="submitted"
-                                class="oe_highlight" />
+                                class="oe_highlight" groups="hr.group_hr_manager"/>
                         <button name="cancel_function" type="object" string="Cancel" states="draft,submitted"
-                               />
+                                groups="hr.group_hr_manager"/>
                         <button name="set_to_function" type="object" string="Set to Draft" states="cancel"
-                                />
+                                groups="hr.group_hr_manager"/>
                         <field name="state" widget="statusbar" statusbar_visible="draft,explain,action"/>
                     </header>
                     <sheet>
@@ -71,7 +71,7 @@
                         <group>
                             <group>
                                 <field name="department_name" required="True"
-                                       attrs="{'readonly': [('state','=','action')]}"/>
+                                       attrs="{'readonly': [('state','=','action')]}" groups="hr.group_hr_manager"/>
                                 <field name="joined_date" string="Joined Date"/>
                                 <field name="read_only" invisible="True"/>
                                 <field name="warning" invisible="True"/>
@@ -106,7 +106,7 @@
                                 <group>
                                     <field name="action" string="Action"
                                            attrs="{'invisible': [('state','not in',['submitted','action'])],'readonly': [('state','=','action')]}"
-                                           domain="[('category_type','=','action')]" />
+                                           domain="[('category_type','=','action')]" groups="hr.group_hr_manager"/>
                                 </group>
                                 <group>
                                     <field name="action_details"

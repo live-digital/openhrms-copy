@@ -19,7 +19,7 @@
                             />
                 </button>
 <!--                attrs="{'invisible': ['|', '|',('state','!=','validate'), ('flight_ticket','!=',[])]}"-->
-                <field name="name" position="after">
+                <field name="department_id" position="after">
                     <field name="remaining_leaves" attrs="{'invisible': [('state','in',('validate', 'refuse'))]}"
                            readonly="1" groups="hr_holidays.group_hr_holidays_user,hr_holidays.group_hr_holidays_manager"/>
                     <field name="flight_ticket" invisible="1"/>

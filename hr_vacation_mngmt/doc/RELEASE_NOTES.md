@@ -1,8 +1,8 @@
-## Module <hr_vacation_mngmt>
+## Module <ohrms_core>
 
-#### 05.11.2022
-#### Version 16.0.1.0.0
+#### 30.11.2021
+#### Version 15.0.1.0.0
 ##### ADD
-- Initial commit
+- Initial commit for OpenHRMS Project
 
 

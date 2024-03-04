@@ -16,10 +16,10 @@ class HrPayslipLine(models.Model):
         register_partner_id = self.salary_rule_id.register_id.partner_id
         partner_id = register_partner_id.id or self.slip_id.employee_id.address_home_id.id
         if credit_account:
-            if register_partner_id or self.salary_rule_id.account_credit.account_type in ('asset_receivable', 'liability_payable'):
+            if register_partner_id or self.salary_rule_id.account_credit.internal_type in ('receivable', 'payable'):
                 return partner_id
         else:
-            if register_partner_id or self.salary_rule_id.account_debit.account_type in ('asset_receivable', 'liability_payable'):
+            if register_partner_id or self.salary_rule_id.account_debit.internal_type in ('receivable', 'payable'):
                 return partner_id
         return False
 
@@ -86,7 +86,7 @@ class HrPayslip(models.Model):
                         'date': date,
                         'debit': amount > 0.0 and amount or 0.0,
                         'credit': amount < 0.0 and -amount or 0.0,
-                        # 'analytic_account_id': line.salary_rule_id.analytic_account_id.id,
+                        'analytic_account_id': line.salary_rule_id.analytic_account_id.id,
                         'tax_line_id': line.salary_rule_id.account_tax_id.id,
                     })
                     line_ids.append(debit_line)
@@ -100,14 +100,14 @@ class HrPayslip(models.Model):
                         'date': date,
                         'debit': amount < 0.0 and -amount or 0.0,
                         'credit': amount > 0.0 and amount or 0.0,
-                        # 'analytic_account_id': line.salary_rule_id.analytic_account_id.id,
+                        'analytic_account_id': line.salary_rule_id.analytic_account_id.id,
                         'tax_line_id': line.salary_rule_id.account_tax_id.id,
                     })
                     line_ids.append(credit_line)
                     credit_sum += credit_line[2]['credit'] - credit_line[2]['debit']
 
             if currency.compare_amounts(credit_sum, debit_sum) == -1:
-                acc_id = slip.journal_id.default_account_id.id
+                acc_id = slip.journal_id.default_credit_account_id.id
                 if not acc_id:
                     raise UserError(_('The Expense Journal "%s" has not properly configured the Credit Account!') % (
                         slip.journal_id.name))
@@ -123,7 +123,7 @@ class HrPayslip(models.Model):
                 line_ids.append(adjust_credit)
 
             elif currency.compare_amounts(debit_sum, credit_sum) == -1:
-                acc_id = slip.journal_id.default_account_id.id
+                acc_id = slip.journal_id.default_debit_account_id.id
                 if not acc_id:
                     raise UserError(_('The Expense Journal "%s" has not properly configured the Debit Account!') % (
                         slip.journal_id.name))
@@ -140,10 +140,12 @@ class HrPayslip(models.Model):
             move_dict['line_ids'] = line_ids
             move = self.env['account.move'].create(move_dict)
             slip.write({'move_id': move.id, 'date': date})
+            print(move)
+            print(move.line_ids)
             if not move.line_ids:
                 raise UserError(_("As you installed the payroll accounting module you have to choose Debit and Credit"
                                   " account for at least one salary rule in the choosen Salary Structure."))
-            move.action_post()
+            move.post()
         return res
 
 

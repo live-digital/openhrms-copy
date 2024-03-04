@@ -4788,7 +4788,7 @@ msgstr ".لا يمكنك نقل إلى نفس الشركة"
 #. module: hr_insurance
 #: model_terms:ir.actions.act_window,help:hr_insurance.action_employee_insurance_details
 #: model_terms:ir.actions.act_window,help:hr_insurance.action_insurance_policy_management
-msgid "You haven't created any policy yet."
+msgid "You have'nt created any policy yet."
 msgstr ".لم تنشئ أي سياسة حتى الآن"
 
 #. module: hr_employee_transfer

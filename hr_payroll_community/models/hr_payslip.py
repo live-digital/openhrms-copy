@@ -99,21 +99,6 @@ class HrPayslip(models.Model):
     payslip_count = fields.Integer(compute='_compute_payslip_count',
                                    string="Payslip Computation Details")
 
-    def action_send_email(self):
-        res = self.env.user.has_group(
-            'hr_payroll_community.group_hr_payroll_community_manager')
-        if res:
-            email_values = {
-                'email_from': self.env.user.work_email,
-                'email_to': self.employee_id.work_email,
-                'subject': self.name
-            }
-            mail_template = self.env.ref(
-                'hr_payroll_community.payslip_email_template').sudo()
-
-            mail_template.send_mail(self.id, force_send=True,
-                                    email_values=email_values)
-
     def _compute_details_by_salary_rule_category(self):
         for payslip in self:
             payslip.details_by_salary_rule_category = payslip.mapped(
@@ -132,13 +117,18 @@ class HrPayslip(models.Model):
                 _("Payslip 'Date From' must be earlier 'Date To'."))
 
     def action_payslip_draft(self):
+
         return self.write({'state': 'draft'})
 
     def action_payslip_done(self):
+
         self.compute_sheet()
         return self.write({'state': 'done'})
 
     def action_payslip_cancel(self):
+
+        if self.filtered(lambda slip: slip.state == 'done'):
+            raise UserError(_("Cannot cancel a payslip that is done."))
         return self.write({'state': 'cancel'})
 
     def refund_sheet(self):
@@ -201,6 +191,7 @@ class HrPayslip(models.Model):
         return self.env['hr.contract'].search(clause_final).ids
 
     def compute_sheet(self):
+
         for payslip in self:
             number = payslip.number or self.env['ir.sequence'].next_by_code(
                 'salary.slip')
@@ -234,12 +225,12 @@ class HrPayslip(models.Model):
 
             # compute leave days
             leaves = {}
-
             calendar = contract.resource_calendar_id
             tz = timezone(calendar.tz)
             day_leave_intervals = contract.employee_id.list_leaves(day_from,
                                                                    day_to,
                                                                    calendar=contract.resource_calendar_id)
+            
             multi_leaves = []
             for day, hours, leave in day_leave_intervals:
                 work_hours = calendar.get_work_hours_count(
@@ -281,7 +272,6 @@ class HrPayslip(models.Model):
                 'contract_id': contract.id,
             }
             res.append(attendances)
-
             uniq_leaves = [*set(multi_leaves)]
             c_leaves = {}
             for rec in uniq_leaves:
@@ -290,9 +280,9 @@ class HrPayslip(models.Model):
                                         rec.duration_display.replace(
                                             "hours",
                                             "")), })
-            flag = 1
+
             for item in c_leaves:
-                if not leaves:
+                if not leaves or item not in leaves:
                     data = {
                         'name': item.name,
                         'sequence': 20,
@@ -310,18 +300,6 @@ class HrPayslip(models.Model):
                             'hours']
                         leaves[item]['number_of_days'] += c_leaves[item][
                                                               'hours'] / work_hours
-                    if item not in leaves and flag == 1:
-                        data = {
-                            'name': item.name,
-                            'sequence': 20,
-                            'code': holiday.holiday_status_id.code or 'GLOBAL',
-                            'number_of_hours': c_leaves[item]['hours'],
-                            'number_of_days': c_leaves[item][
-                                                  'hours'] / work_hours,
-                            'contract_id': contract.id,
-                        }
-                        res.append(data)
-                        flag = 0
 
             res.extend(leaves.values())
         return res
@@ -528,6 +506,7 @@ class HrPayslip(models.Model):
     # employee_id and contract_id could be browse records
     def onchange_employee_id(self, date_from, date_to, employee_id=False,
                              contract_id=False):
+
         # defaults
         res = {
             'value': {
@@ -612,13 +591,10 @@ class HrPayslip(models.Model):
         if not self.env.context.get('contract') or not self.contract_id:
             contract_ids = self.get_contract(employee, date_from, date_to)
             if not contract_ids:
-                self.worked_days_line_ids = False
-                self.contract_id = False
                 return
             self.contract_id = self.env['hr.contract'].browse(contract_ids[0])
 
         if not self.contract_id.struct_id:
-            self.worked_days_line_ids = False
             return
         self.struct_id = self.contract_id.struct_id
         if self.contract_id:
@@ -769,30 +745,14 @@ class HrPayslipRun(models.Model):
                                                                days=-1)).date()))
     credit_note = fields.Boolean(string='Credit Note', readonly=True,
                                  states={'draft': [('readonly', False)]},
-                                 help="If its checked, indicates that all "
-                                      "payslips generated from here are refund "
+                                 help="If its checked, indicates that all payslips generated from here are refund "
                                       "payslips.")
-    is_validate = fields.Boolean(compute='_compute_is_validate')
 
     def draft_payslip_run(self):
         return self.write({'state': 'draft'})
 
     def close_payslip_run(self):
         return self.write({'state': 'close'})
-
-    def action_validate_payslips(self):
-        if self.slip_ids:
-            for slip in self.slip_ids.filtered(
-                    lambda slip: slip.state == 'draft'):
-                slip.action_payslip_done()
-
-    def _compute_is_validate(self):
-        for record in self:
-            if record.slip_ids and record.slip_ids.filtered(
-                    lambda slip: slip.state == 'draft'):
-                record.is_validate = True
-            else:
-                record.is_validate = False
 
 
 class ResourceMixin(models.AbstractModel):

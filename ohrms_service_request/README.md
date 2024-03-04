@@ -27,7 +27,6 @@ Author
 
 Developers: Sayooj A O @ Cybrosys
             Version 15: Sagarika B @cybrosys
-            Version 16:Aiswarya M@cybrosys
 
 Maintainer
 ----------

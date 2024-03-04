@@ -1,4 +1,4 @@
-Employee Background Verification v16
+Employee Background Verification v15
 ====================================
 This module helps you to the verification of employee background.
 
@@ -25,7 +25,7 @@ Tech
 
 Installation
 ============
-- www.odoo.com/documentation/16.0/setup/install.html
+- www.odoo.com/documentation/13.0/setup/install.html
 - Install our custom addon
 
 

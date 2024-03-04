@@ -1,5 +1,6 @@
 <odoo>
     <data>
+
         <record id="res_company_inherited_company_policy" model="ir.ui.view">
             <field name="name">Company policy</field>
             <field name="model">res.company</field>

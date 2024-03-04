@@ -6,7 +6,7 @@ Manage Attendances for Onsight Jobs.
 
 Installation
 ============
-- www.odoo.com/documentation/16.0/setup/install.html
+- www.odoo.com/documentation/14.0/setup/install.html
 - Install our custom addon
 
 License
@@ -28,7 +28,6 @@ Author
 Developer: Sayooj A O @ Cybrosys
            Version 14: Muhammed Nafih @Cybrosys
            Version 15: Mily S @Cybrosys
-           Version 16: Aiswarya M@Cybrosys
 Maintainer
 ----------
 

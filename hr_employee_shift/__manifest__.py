@@ -1,10 +1,10 @@
-# -- coding: utf-8 --
+# -*- coding: utf-8 -*-
 ###################################################################################
-#    A part of Open HRMS Project <https://www.openhrms.com>
+#    A part of Open Hrms Project <https://www.openhrms.com>
 #
 #    Cybrosys Technologies Pvt. Ltd.
-#    Copyright (C) 2022-TODAY Cybrosys Technologies (<https://www.cybrosys.com>).
-#    Author: Cybrosys (<https://www.cybrosys.com>)
+#    Copyright (C) 2021-TODAY Cybrosys Technologies (<https://www.cybrosys.com>).
+#    Author: Saritha Sahadevan (<https://www.cybrosys.com>)
 #
 #    This program is free software: you can modify
 #    it under the terms of the GNU Affero General Public License (AGPL) as
@@ -22,7 +22,7 @@
 ###################################################################################
 {
     'name': "Open HRMS Employee Shift",
-    'version': '16.0.1.0.0',
+    'version': '15.0.1.0.0',
     'summary': """Easily create, manage, and track employee shift schedules.""",
     'description': """Easily create, manage, and track employee shift schedules.""",
     'live_test_url': 'https://youtu.be/o580wqD9Nig',

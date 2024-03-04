@@ -1,4 +1,4 @@
-Open HRMS Employee History v16
+Open HRMS Employee History v15
 ==============================
 
 History of the employees in our company.
@@ -16,7 +16,7 @@ Tech
 
 Installation
 ============
-- www.odoo.com/documentation/16.0/setup/install.html
+- www.odoo.com/documentation/15.0/setup/install.html
 - Install our custom addon
 
 
@@ -35,7 +35,6 @@ Developer: Binu M Baiju @ cybrosys, odoo@cybrosys.com
            v13.0  Kavya Raveendran, odoo@cybrosys.com
            v14.0  Jibin James, odoo@cybrosys.com
            v15.0  Mily, odoo@cybrosys.com
-           v16.0  Aiswarya, odoo@cybrosys.com
 
 Maintainer
 ----------

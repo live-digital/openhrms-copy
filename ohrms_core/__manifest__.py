@@ -3,7 +3,7 @@
 #    A part of Open HRMS Project <https://www.openhrms.com>
 #
 #    Cybrosys Technologies Pvt. Ltd.
-#    Copyright (C) 2022-TODAY Cybrosys Technologies (<https://www.cybrosys.com>).
+#    Copyright (C) 2020-TODAY Cybrosys Technologies (<https://www.cybrosys.com>).
 #    Author: Cybrosys (<https://www.cybrosys.com>)
 #
 #    This program is free software: you can modify
@@ -22,7 +22,7 @@
 ###################################################################################
 {
     'name': 'Open HRMS Core',
-    'version': '16.0.1.0.0',
+    'version': '15.0.1.1.1',
     'summary': """Open HRMS Suit: It brings all Open HRMS modules""",
     'description': """Openhrms, Main module of Open HRMS, It brings all others into a single module, Payroll, Payroll Accounting,Expense,
                 Dashboard, Employees, Employee Document, Resignation, Salary Advance, Loan Management, Gratuity, Service Request, Gosi, WPS Report, Reminder, Multi Company, Shift Management, Employee History,
@@ -32,29 +32,27 @@
     'company': 'Cybrosys Techno Solutions',
     'live_test_url': 'https://youtu.be/kBBlUFofCTs',
     'website': "https://www.openhrms.com",
-    'depends': [
-        'base', 'web', 'mail',
-        'hr',
-        'hr_payroll_account_community',
-        'hr_gamification',
-        'hr_employee_updation',
-        'hr_recruitment',
-        'hr_attendance',
-        'hr_holidays',
-        'hr_payroll_community',
-        'hr_expense',
-        'hr_leave_request_aliasing',
-        'hr_timesheet',
-        'oh_employee_creation_from_user',
-        'oh_employee_documents_expiry',
-        'hr_multi_company',
-        'ohrms_loan_accounting',
-        'ohrms_salary_advance',
-        'hr_reward_warning',
-        'hrms_dashboard',
-        'hr_reminder'
-    ],
-    "external_dependencies": {"python": ["pandas"]},
+    'depends': ['web',
+                'hr',
+                'hr_payroll_account_community',
+                'hr_gamification',
+                'hr_employee_updation',
+                'hr_recruitment',
+                'hr_attendance',
+                'hr_holidays',
+                'hr_payroll_community',
+                'hr_expense',
+                'hr_leave_request_aliasing',
+                'hr_timesheet',
+                'oh_employee_creation_from_user',
+                'oh_employee_documents_expiry',
+                'hr_multi_company',
+                'ohrms_loan_accounting',
+                'ohrms_salary_advance',
+                'hr_reward_warning',
+                'hrms_dashboard',
+                'hr_reminder'
+                ],
     'data': [
         'views/menu_arrangement_view.xml',
         'views/hr_config_view.xml',
@@ -62,12 +60,13 @@
     ],
     'assets': {
         'web.assets_backend': [
-
-            'ohrms_core/static/src/css/menu_order_alphabets.css',
             'ohrms_core/static/src/js/appMenu.js',
             'ohrms_core/static/src/js/data.js',
+            'ohrms_core/static/src/css/menu_order_alphabets.css',
+        ],
+        'web.assets_qweb': [
             'ohrms_core/static/src/xml/link_view.xml',
-            'ohrms_core/static/templates/side_bar.xml'
+            'ohrms_core/static/templates/side_bar.xml',
         ],
     },
     'images': ['static/description/banner.gif'],

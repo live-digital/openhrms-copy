@@ -1,4 +1,4 @@
-OHRMS Gratuity Settlement v16
+OHRMS Gratuity Settlement v15
 =============================
 
 Employee Gratuity Settlement during Resignation.
@@ -16,7 +16,7 @@ Tech
 
 Installation
 ============
-- www.odoo.com/documentation/16.0/setup/install.html
+- www.odoo.com/documentation/15.0/setup/install.html
 - Install our custom addon
 
 
@@ -33,7 +33,6 @@ Author
 
 Developer: Ajmal J K @ cybrosys
            Version 15: Sagarika B @cybrosys
-           Version 16: Aiswarya M @Cybrosys
 
 Maintainer
 ----------

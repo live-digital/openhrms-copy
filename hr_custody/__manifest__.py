@@ -1,10 +1,10 @@
-# -- coding: utf-8 --
+# -*- coding: utf-8 -*-
 ###################################################################################
 #    A part of Open HRMS Project <https://www.openhrms.com>
 #
 #    Cybrosys Technologies Pvt. Ltd.
-#    Copyright (C) 2022-TODAY Cybrosys Technologies (<https://www.cybrosys.com>).
-#    Author: Cybrosys (<https://www.cybrosys.com>)
+#    Copyright (C) 2021-TODAY Cybrosys Technologies (<https://www.cybrosys.com>).
+#    Authors: Avinash Nk, Jesni Banu (<https://www.cybrosys.com>)
 #
 #    This program is free software: you can modify
 #    it under the terms of the GNU Affero General Public License (AGPL) as
@@ -22,7 +22,7 @@
 ###################################################################################
 {
     'name': 'Open HRMS Custody',
-    'version': '16.0.1.0.0',
+    'version': '15.0.1.0.0',
     'summary': """Manage the company properties when it is in the custody of an employee""",
     'description': 'Manage the company properties when it is in the custody of an employee',
     'live_test_url': 'https://youtu.be/rd62HYzZxFI',

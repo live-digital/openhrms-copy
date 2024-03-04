@@ -7,13 +7,10 @@ import { computeAppsAndMenuItems } from "@web/webclient/menus/menu_helpers";
 import core from 'web.core';
 
 const commandProviderRegistry = registry.category("command_provider");
-const { onMounted } = owl;
 
 import { patch } from 'web.utils';
-var rpc = require('web.rpc');
 
-patch(NavBar.prototype, 'ohrms_core/static/src/js/appMenu.js', {
-
+patch(NavBar.prototype, 'custom_addons/ohrms_core/static/src/js/appMenu.js', {
 
     //--------------------------------------------------------------------------
     // Public
@@ -28,16 +25,15 @@ patch(NavBar.prototype, 'ohrms_core/static/src/js/appMenu.js', {
         let { apps, menuItems } = computeAppsAndMenuItems(this.menuService.getMenuAsTree("root"));
         this._apps = apps;
         this._searchableMenus = menuItems;
-        onMounted(this.onMounted);
     },
 
-    onMounted() {
-        console.log("hhhhhhhhhhhhh")
+    mounted() {
+        this._super();
         this.$search_container = $(".search-container");
         this.$search_input = $(".search-input input");
         this.$search_results = $(".search-results");
         this.$app_menu = $(".app-menu");
-//        this.$dropdown_menu = $(".dropdown-menu");
+        this.$dropdown_menu = $(".dropdown-menu");
     },
 
      _searchMenusSchedule: function () {

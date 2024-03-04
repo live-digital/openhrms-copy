@@ -129,13 +129,11 @@
         <field name="arch" type="xml">
             <form string="Payslip">
             <header>
-                <button string="Send Email" name="action_send_email" type="object" states="draft"/>
                 <button string="Confirm" name="action_payslip_done" type="object" states="draft" class="oe_highlight"/>
-                <button string="Send Email" name="action_send_email" type="object" states="done" class="oe_highlight"/>
                 <button string="Refund" name="refund_sheet" states="confirm,done" type='object' />
                 <button string="Set to Draft" name="action_payslip_draft" type="object" states="cancel"/>
                 <button string="Compute Sheet" name="compute_sheet" type="object" states="draft" class="oe_highlight"/>
-                <button string="Cancel Payslip" name="action_payslip_cancel" type="object" states="draft,hr_check,confirm,verify,done"/>
+                <button string="Cancel Payslip" name="action_payslip_cancel" type="object" states="draft,hr_check,confirm,verify"/>
                 <field name="state" widget="statusbar" statusbar_visible="draft,confirm"/>
             </header>
             <sheet>
@@ -375,8 +373,6 @@
                 <button name="close_payslip_run" type="object" string="Close" states="draft" class="oe_highlight"/>
                 <button name="%(action_hr_payslip_by_employees)d" type="action" states="draft" string="Generate Payslips" class="oe_highlight"/>
                 <button string="Set to Draft" name="draft_payslip_run" type="object" states="close" />
-                <button string="Validate" name="action_validate_payslips" type="object" class="oe_highlight"
-                    attrs="{'invisible': [('is_validate', '=', False)]}"/>
                 <field name="state" widget="statusbar"/>
             </header>
             <sheet>
@@ -390,7 +386,6 @@
                            <field name="date_start" class="oe_inline"/> - <field name="date_end" class="oe_inline"/>
                      </div>
                     <field name="credit_note"/>
-                    <field name="is_validate" invisible="1"/>
                 </group>
                 <separator string="Payslips"/>
                 <field name="slip_ids"/>

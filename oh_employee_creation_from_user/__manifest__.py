@@ -3,7 +3,7 @@
 #    A part of Open HRMS Project <https://www.openhrms.com>
 #
 #    Cybrosys Technologies Pvt. Ltd.
-#    Copyright (C) 2022-TODAY Cybrosys Technologies (<https://www.cybrosys.com>).
+#    Copyright (C) 2020-TODAY Cybrosys Technologies (<https://www.cybrosys.com>).
 #
 #    This program is free software: you can modify
 #    it under the terms of the GNU Affero General Public License (AGPL) as
@@ -21,12 +21,13 @@
 ###################################################################################
 {
     'name': 'Open HRMS Employees From User',
-    'version': '16.0.1.0.0',
+    'version': '15.0.1.1.0',
     'summary': 'Automatically Creates Employee While Creating User',
     'live_test_url': 'https://youtu.be/_BJKt6zGjcs',
     'description': 'This module helps you to create employees automatically while creating users',
     'category': 'Generic Modules/Human Resources',
     'author': 'Cybrosys Techno solutions,Open HRMS',
+
     'company': 'Cybrosys Techno Solutions',
     'website': "https://www.openhrms.com",
     'depends': ['base', 'hr'],

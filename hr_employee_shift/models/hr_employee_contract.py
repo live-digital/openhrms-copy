@@ -1,25 +1,4 @@
-# -- coding: utf-8 --
-###################################################################################
-#    A part of Open HRMS Project <https://www.openhrms.com>
-#
-#    Cybrosys Technologies Pvt. Ltd.
-#    Copyright (C) 2022-TODAY Cybrosys Technologies (<https://www.cybrosys.com>).
-#    Author: Cybrosys (<https://www.cybrosys.com>)
-#
-#    This program is free software: you can modify
-#    it under the terms of the GNU Affero General Public License (AGPL) as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-#
-###################################################################################
+# -*- coding: utf-8 -*-
 from odoo.exceptions import Warning
 from odoo import models, fields, api, _
 
@@ -27,8 +6,7 @@ from odoo import models, fields, api, _
 class HrEmployeeContract(models.Model):
     _inherit = 'hr.contract'
 
-    shift_schedule = fields.One2many('hr.shift.schedule', 'rel_hr_schedule', string="Shift Schedule",
-                                     help="Shift schedule")
+    shift_schedule = fields.One2many('hr.shift.schedule', 'rel_hr_schedule', string="Shift Schedule", help="Shift schedule")
     working_hours = fields.Many2one('resource.calendar', string='Working Schedule', help="Working hours")
     department_id = fields.Many2one('hr.department', string="Department", help="Department",
                                     required=True)
@@ -55,6 +33,7 @@ class HrSchedule(models.Model):
             }
         }
 
+    
     def write(self, vals):
         self._check_overlap(vals)
         return super(HrSchedule, self).write(vals)
@@ -74,3 +53,4 @@ class HrSchedule(models.Model):
             if vals.get('start_date') > vals.get('end_date'):
                 raise Warning(_('Start date should be less than end date.'))
         return True
+

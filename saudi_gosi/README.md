@@ -7,7 +7,7 @@ also allows to print the pdf reports of those Contribution registers.
 
 Installation
 ============
-- www.odoo.com/documentation/16.0/setup/install.html
+- www.odoo.com/documentation/15.0/setup/install.html
 - Install our custom addon
 
 License

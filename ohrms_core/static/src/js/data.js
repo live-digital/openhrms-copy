@@ -18,5 +18,6 @@ function oHrmsAccountItem(env) {
     };
 }
 
-registry.category("user_menuitems")
-registry.add("oHrmsAccountItem",oHrmsAccountItem)
+registry
+    .category("user_menuitems")
+    .add("oHrmsAccountItem",oHrmsAccountItem)

@@ -1,10 +1,10 @@
-# -- coding: utf-8 --
+# -*- coding: utf-8 -*-
 ###################################################################################
-#    A part of Open HRMS Project <https://www.openhrms.com>
+#    A part of OpenHRMS Project <https://www.openhrms.com>
 #
 #    Cybrosys Technologies Pvt. Ltd.
-#    Copyright (C) 2022-TODAY Cybrosys Technologies (<https://www.cybrosys.com>).
-#    Author: Cybrosys (<https://www.cybrosys.com>)
+#    Copyright (C) 2021-TODAY Cybrosys Technologies (<https://www.cybrosys.com>).
+#    Author: Cybrosys Technologies (<https://www.cybrosys.com>)
 #
 #    This program is free software: you can modify
 #    it under the terms of the GNU Affero General Public License (AGPL) as
@@ -20,14 +20,15 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 ###################################################################################
+
 from odoo import models, fields
 
 
 class CompanyPolicy(models.Model):
     _inherit = 'res.company'
 
-    company_info = fields.Html(string="Company Policy",
-                               help="User company policy")
+    company_info = fields.Html(string="Company Policy", help="User company policy")
+    # print('Helllo')
 
 
 class PolicyWizard(models.TransientModel):
@@ -35,3 +36,4 @@ class PolicyWizard(models.TransientModel):
 
     company_id = fields.Many2one('res.company', help="Company")
     policy_info = fields.Html(related='company_id.company_info')
+    print(policy_info, 'Hi')

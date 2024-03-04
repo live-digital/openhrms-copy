@@ -1,7 +1,6 @@
-console.log("starting");
 odoo.define('hrms_dashboard.DashboardRewrite', function (require) {
 "use strict";
-console.log("started");
+
 const ActionMenus = require('web.ActionMenus');
 const ComparisonMenu = require('web.ComparisonMenu');
 const ActionModel = require("web.ActionModel");
@@ -30,10 +29,12 @@ var abstractView = require('web.AbstractView');
 var _t = core._t;
 var QWeb = core.qweb;
 
-const { useRef, useSubEnv } = owl;
+const { useRef, useSubEnv } = hooks;
 
 
 var HrDashboard = AbstractAction.extend({
+
+
     template: 'HrDashboardMain',
     cssLibs: [
         '/hrms_dashboard/static/src/css/lib/nv.d3.css'
@@ -43,6 +44,7 @@ var HrDashboard = AbstractAction.extend({
     ],
 
      events: {
+             'click .hr_payslip':'hr_payslip',
              'click .hr_leave_request_approve': 'leaves_to_approve',
              'click .hr_leave_allocations_approve': 'leave_allocations_to_approve',
              'click .hr_job_application_approve': 'job_applications_to_approve',
@@ -111,6 +113,7 @@ var HrDashboard = AbstractAction.extend({
         return $.when(def0, def1, def2);
         });
     },
+
 
     start: function() {
 

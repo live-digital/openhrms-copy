@@ -1,10 +1,10 @@
-# -- coding: utf-8 --
+# -*- coding: utf-8 -*-
 ###################################################################################
-#    A part of Open HRMS Project <https://www.openhrms.com>
+#    A part of OpenHRMS Project <https://www.openhrms.com>
 #
 #    Cybrosys Technologies Pvt. Ltd.
-#    Copyright (C) 2022-TODAY Cybrosys Technologies (<https://www.cybrosys.com>).
-#    Author: Cybrosys (<https://www.cybrosys.com>)
+#    Copyright (C) 2021-TODAY Cybrosys Technologies (<https://www.cybrosys.com>).
+#    Author: Cybrosys Technologies (<https://www.cybrosys.com>)
 #
 #    This program is free software: you can modify
 #    it under the terms of the GNU Affero General Public License (AGPL) as
@@ -20,9 +20,10 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 ###################################################################################
+
 {
     'name': 'Hr Company Policy',
-    'version': '16.0.1.0.0',
+    'version': '15.0.1.0.0',
     'summary': 'Manage Company Policies',
     'description': 'OpenHRMS Company Policies, hrms, policies',
     'category': 'Generic Modules/Human Resources',
@@ -39,6 +40,8 @@
         'web.assets_backend': [
             '/hr_company_policy/static/src/js/company_policy.js',
             '/hr_company_policy/static/src/css/company_policy.css',
+        ],
+        'web.assets_qweb': [
             '/hr_company_policy/static/src/xml/dashboard_view.xml'
         ],
     },

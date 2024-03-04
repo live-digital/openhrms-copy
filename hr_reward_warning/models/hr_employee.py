@@ -32,23 +32,18 @@ class HrAnnouncements(models.Model):
         now = datetime.now()
         now_date = now.date()
         for obj in self:
-            announcement_ids_general = self.env[
-                'hr.announcement'].sudo().search(
-                [('is_announcement', '=', True),
-                 ('state', 'in', ('approved', 'done')),
-                 ('date_start', '<=', now_date)])
-            announcement_ids_emp = self.env['hr.announcement'].sudo().search(
-                [('employee_ids', 'in', self.id),
-                 ('state', 'in', ('approved', 'done')),
-                 ('date_start', '<=', now_date)])
-            announcement_ids_dep = self.env['hr.announcement'].sudo().search(
-                [('department_ids', 'in', self.department_id.id),
-                 ('state', 'in', ('approved', 'done')),
-                 ('date_start', '<=', now_date)])
-            announcement_ids_job = self.env['hr.announcement'].sudo().search(
-                [('position_ids', 'in', self.job_id.id),
-                 ('state', 'in', ('approved', 'done')),
-                 ('date_start', '<=', now_date)])
+            announcement_ids_general = self.env['hr.announcement'].sudo().search([('is_announcement', '=', True),
+                                                                                 ('state', 'in', ('approved', 'done')),
+                                                                                  ('date_start', '<=', now_date)])
+            announcement_ids_emp = self.env['hr.announcement'].sudo().search([('employee_ids', 'in', self.id),
+                                                                              ('state', 'in', ('approved', 'done')),
+                                                                              ('date_start', '<=', now_date)])
+            announcement_ids_dep = self.env['hr.announcement'].sudo().search([('department_ids', 'in', self.department_id.id),
+                                                                              ('state', 'in', ('approved', 'done')),
+                                                                              ('date_start', '<=', now_date)])
+            announcement_ids_job = self.env['hr.announcement'].sudo().search([('position_ids', 'in', self.job_id.id),
+                                                                              ('state', 'in', ('approved', 'done')),
+                                                                              ('date_start', '<=', now_date)])
 
             announcement_ids = announcement_ids_general.ids + announcement_ids_emp.ids + announcement_ids_dep.ids + announcement_ids_job.ids
 
@@ -59,23 +54,18 @@ class HrAnnouncements(models.Model):
         now_date = now.date()
         for obj in self:
 
-            announcement_ids_general = self.env[
-                'hr.announcement'].sudo().search(
-                [('is_announcement', '=', True),
-                 ('state', 'in', ('approved', 'done')),
-                 ('date_start', '<=', now_date)])
-            announcement_ids_emp = self.env['hr.announcement'].sudo().search(
-                [('employee_ids', 'in', self.id),
-                 ('state', 'in', ('approved', 'done')),
-                 ('date_start', '<=', now_date)])
-            announcement_ids_dep = self.env['hr.announcement'].sudo().search(
-                [('department_ids', 'in', self.department_id.id),
-                 ('state', 'in', ('approved', 'done')),
-                 ('date_start', '<=', now_date)])
-            announcement_ids_job = self.env['hr.announcement'].sudo().search(
-                [('position_ids', 'in', self.job_id.id),
-                 ('state', 'in', ('approved', 'done')),
-                 ('date_start', '<=', now_date)])
+            announcement_ids_general = self.env['hr.announcement'].sudo().search([('is_announcement', '=', True),
+                                                                                  ('state', 'in', ('approved', 'done')),
+                                                                                  ('date_start', '<=', now_date)])
+            announcement_ids_emp = self.env['hr.announcement'].sudo().search([('employee_ids', 'in', self.id),
+                                                                              ('state', 'in', ('approved', 'done')),
+                                                                              ('date_start', '<=', now_date)])
+            announcement_ids_dep = self.env['hr.announcement'].sudo().search([('department_ids', 'in', self.department_id.id),
+                                                                             ('state', 'in', ('approved', 'done')),
+                                                                              ('date_start', '<=', now_date)])
+            announcement_ids_job = self.env['hr.announcement'].sudo().search([('position_ids', 'in', self.job_id.id),
+                                                                              ('state', 'in', ('approved', 'done')),
+                                                                              ('date_start', '<=', now_date)])
 
             ann_obj = announcement_ids_general.ids + announcement_ids_emp.ids + announcement_ids_job.ids + announcement_ids_dep.ids
 
@@ -83,8 +73,7 @@ class HrAnnouncements(models.Model):
 
             for each in ann_obj:
                 ann_ids.append(each)
-            view_id = self.env.ref(
-                'hr_reward_warning.view_hr_announcement_form').id
+            view_id = self.env.ref('hr_reward_warning.view_hr_announcement_form').id
             if ann_ids:
                 if len(ann_ids) > 1:
                     value = {
@@ -94,6 +83,7 @@ class HrAnnouncements(models.Model):
                         'view_id': False,
                         'type': 'ir.actions.act_window',
                         'name': _('Announcements'),
+                        'res_id': ann_ids
                     }
                 else:
                     value = {
@@ -106,6 +96,4 @@ class HrAnnouncements(models.Model):
                     }
                 return value
 
-    announcement_count = fields.Integer(compute='_announcement_count',
-                                        string='# Announcements',
-                                        help="Count of Announcement's")
+    announcement_count = fields.Integer(compute='_announcement_count', string='# Announcements', help="Count of Announcement's")
