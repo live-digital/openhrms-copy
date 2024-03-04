@@ -1,73 +1,57 @@
-# -*- coding: utf-8 -*-
-#############################################################################
+# -- coding: utf-8 --
+###################################################################################
 #    A part of Open HRMS Project <https://www.openhrms.com>
 #
 #    Cybrosys Technologies Pvt. Ltd.
+#    Copyright (C) 2022-TODAY Cybrosys Technologies (<https://www.cybrosys.com>).
+#    Author: Cybrosys (<https://www.cybrosys.com>)
 #
-#    Copyright (C) 2023-TODAY Cybrosys Technologies(<https://www.cybrosys.com>)
-#    Author: Cybrosys Techno Solutions(<https://www.cybrosys.com>)
-#
-#    You can modify it under the terms of the GNU LESSER
-#    GENERAL PUBLIC LICENSE (LGPL v3), Version 3.
+#    This program is free software: you can modify
+#    it under the terms of the GNU Affero General Public License (AGPL) as
+#    published by the Free Software Foundation, either version 3 of the
+#    License, or (at your option) any later version.
 #
 #    This program is distributed in the hope that it will be useful,
 #    but WITHOUT ANY WARRANTY; without even the implied warranty of
 #    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU LESSER GENERAL PUBLIC LICENSE (LGPL v3) for more details.
+#    GNU Affero General Public License for more details.
 #
-#    You should have received a copy of the GNU LESSER GENERAL PUBLIC LICENSE
-#    (LGPL v3) along with this program.
-#    If not, see <http://www.gnu.org/licenses/>.
+#    You should have received a copy of the GNU Affero General Public License
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
-#############################################################################
-from odoo import api, fields, models, _
+###################################################################################
+from odoo import models, fields, api, _
 
 
-class HrEmployee(models.Model):
+class HrCustody(models.Model):
     _inherit = 'hr.employee'
 
-    custody_count = fields.Integer(compute='_compute_custody_count',
-                                   string='# Custody',
-                                   help='This field represents '
-                                        'the count of custodies.')
-    equipment_count = fields.Integer(compute='_compute_equipment_count',
-                                     string='# Equipments',
-                                     help='This field represents '
-                                          'the count of equipments.',
-                                     )
+    custody_count = fields.Integer(compute='_custody_count', string='# Custody')
+    equipment_count = fields.Integer(compute='_equipment_count', string='# Equipments')
 
-    @api.depends('custody_count')
-    def _compute_custody_count(self):
-        """The compute function
-        the count of custody
-        associated with each employee."""
+    # count of all custody contracts
+    
+    def _custody_count(self):
         for each in self:
-            custody_ids = self.env['hr.custody'].search(
-                [('employee_id', '=', each.id)])
+            custody_ids = self.env['hr.custody'].search([('employee', '=', each.id)])
             each.custody_count = len(custody_ids)
 
-    @api.depends('equipment_count')
-    def _compute_equipment_count(self):
-        """The Compute function the count
-        of distinct equipment
-        properties associated
-        with each employee. """
+    # count of all custody contracts that are in approved state
+    
+    def _equipment_count(self):
         for each in self:
-            equipment_obj = self.env['hr.custody'].search(
-                [('employee_id', '=', each.id), ('state', '=', 'approved')])
+            equipment_obj = self.env['hr.custody'].search([('employee', '=', each.id), ('state', '=', 'approved')])
             equipment_ids = []
             for each1 in equipment_obj:
-                if each1.custody_property_id.id not in equipment_ids:
-                    equipment_ids.append(each1.custody_property_id.id)
+                if each1.custody_name.id not in equipment_ids:
+                    equipment_ids.append(each1.custody_name.id)
             each.equipment_count = len(equipment_ids)
 
+    # smart button action for returning the view of all custody contracts related to the current employee
+    
     def custody_view(self):
-        """ The function Used to returning the
-        view of all custody contracts
-        related to the current employee"""
         for each1 in self:
-            custody_obj = self.env['hr.custody'].search(
-                [('employee_id', '=', each1.id)])
+            custody_obj = self.env['hr.custody'].search([('employee', '=', each1.id)])
             custody_ids = []
             for each in custody_obj:
                 custody_ids.append(each.id)
@@ -95,17 +79,16 @@ class HrEmployee(models.Model):
 
                 return value
 
+    # smart button action for returning the view of all custody contracts that are in approved state,
+    # related to the current employee
+    
     def equipment_view(self):
-        """The function used to returning the
-         view of all custody contracts
-         that are in approved state,"""
         for each1 in self:
-            equipment_obj = self.env['hr.custody'].search(
-                [('employee_id', '=', each1.id), ('state', '=', 'approved')])
+            equipment_obj = self.env['hr.custody'].search([('employee', '=', each1.id), ('state', '=', 'approved')])
             equipment_ids = []
             for each in equipment_obj:
-                if each.custody_property_id.id not in equipment_ids:
-                    equipment_ids.append(each.custody_property_id.id)
+                if each.custody_name.id not in equipment_ids:
+                    equipment_ids.append(each.custody_name.id)
             view_id = self.env.ref('hr_custody.custody_custody_form_view').id
             if equipment_ids:
                 if len(equipment_ids) <= 1:
@@ -127,4 +110,5 @@ class HrEmployee(models.Model):
                         'name': _('Equipments'),
                         'res_id': equipment_ids
                     }
+
                 return value

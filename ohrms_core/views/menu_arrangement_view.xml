@@ -8,7 +8,7 @@
 
         <menuitem id="hr_attendance.menu_hr_attendance_root"
                   name="Attendances" sequence="7"
-                  groups="hr_attendance.group_hr_attendance_own_reader"
+                  groups="hr_attendance.group_hr_attendance"
                   web_icon="hr_attendance,static/description/icon.png"/>
 
         <menuitem name="Leaves"

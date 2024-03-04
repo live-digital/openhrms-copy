@@ -1,46 +1,40 @@
 # -*- coding: utf-8 -*-
-#############################################################################
+###################################################################################
 #    A part of Open HRMS Project <https://www.openhrms.com>
 #
 #    Cybrosys Technologies Pvt. Ltd.
+#    Copyright (C) 2020-TODAY Cybrosys Technologies (<https://www.cybrosys.com>).
 #
-#    Copyright (C) 2023-TODAY Cybrosys Technologies(<https://www.cybrosys.com>)
-#    Author: Cybrosys Techno Solutions(<https://www.cybrosys.com>)
-#
-#    You can modify it under the terms of the GNU LESSER
-#    GENERAL PUBLIC LICENSE (LGPL v3), Version 3.
+#    This program is free software: you can modify
+#    it under the terms of the GNU Affero General Public License (AGPL) as
+#    published by the Free Software Foundation, either version 3 of the
+#    License, or (at your option) any later version.
 #
 #    This program is distributed in the hope that it will be useful,
 #    but WITHOUT ANY WARRANTY; without even the implied warranty of
 #    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU LESSER GENERAL PUBLIC LICENSE (LGPL v3) for more details.
+#    GNU Affero General Public License for more details.
 #
-#    You should have received a copy of the GNU LESSER GENERAL PUBLIC LICENSE
-#    (LGPL v3) along with this program.
-#    If not, see <http://www.gnu.org/licenses/>.
+#    You should have received a copy of the GNU Affero General Public License
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
-#############################################################################
+###################################################################################
 {
     'name': 'Open HRMS Multi-Company',
-    'version': '17.0.1.0.0',
-    'category': 'Generic Modules/Human Resources',
+    'version': '16.0.1.0.0',
     'summary': """Enables Multi-Company""",
     'description': 'This module enables multi company features',
+    'category': 'Generic Modules/Human Resources',
     'author': 'Cybrosys Techno solutions,Open HRMS',
     'company': 'Cybrosys Techno Solutions',
-    'maintainer': 'Cybrosys Techno Solutions',
     'website': "https://www.openhrms.com",
-    'depends': ['hr', 'hr_contract', 'hr_payroll_community',
-                'hr_expense', 'hr_attendance', 'hr_employee_transfer'],
+    'depends': ['base', 'hr','hr_contract', 'hr_payroll_community', 'hr_expense', 'hr_attendance', 'hr_employee_transfer'],
     'data': [
-        'security/multi_company_security.xml',
-        'views/hr_attendance_views.xml',
-        'views/hr_leave_views.xml',
-        'views/hr_payslip_run_views.xml',
-        'views/hr_salary_rule_category_views.xml',
+        'views/hr_company_view.xml',
+        'views/multi_company_view.xml',
     ],
-    'images': ['static/description/banner.jpg'],
-    'license': 'LGPL-3',
+    'images': ['static/description/banner.png'],
+    'license': 'AGPL-3',
     'installable': True,
     'auto_install': False,
     'application': False,

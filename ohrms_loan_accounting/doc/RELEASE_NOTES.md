@@ -1,7 +1,6 @@
 ## Module <ohrms_loan_accounting>
 
-#### 28.11.2023
-#### Version 17.0.1.0.0
+#### 18.10.2022
+#### Version 16.0.1.0.0
 ##### ADD
-
-- Initial commit for Open HRMS Loan Accounting
+- Initial commit for Open HRMS Project

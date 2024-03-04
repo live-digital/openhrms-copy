@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 17.0\n"
+"Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-18 06:41+0000\n"
-"PO-Revision-Date: 2023-11-18 06:41+0000\n"
+"POT-Creation-Date: 2022-06-27 09:29+0000\n"
+"PO-Revision-Date: 2022-06-27 09:29+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,9 +16,22 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: hr_employee_transfer
-#: model_terms:ir.ui.view,arch_db:hr_employee_transfer.employee_transfer_view_form
-msgid "Cancel"
+#: model:ir.model.fields,help:hr_employee_transfer.field_employee_transfer__state
+msgid ""
+" * The 'Draft' status is used when a transfer is created and unconfirmed Transfer.\n"
+" * The 'Transferred' status is used when the user confirm the transfer. It stays in the open status till the other company receive the employee.\n"
+" * The 'Done' status is set automatically when the employee is Joined/Received.\n"
+" * The 'Cancelled' status is used when user cancel Transfer."
 msgstr ""
+" * يتم استخدام حالة 'المسودة' عند إنشاء عملية نقل ونقل غير مؤكد.\n"
+" * يتم استخدام الحالة 'المنقولة' عندما يؤكد المستخدم عملية النقل. يبقى في وضع مفتوح حتى يستقبل الفرع / الشركة الأخرى الموظف.\n"
+" * يتم تعيين حالة 'تم' تلقائيًا عند انضمام / تلقي الموظف.\n"
+" * يتم استخدام حالة 'تم الإلغاء' عندما يقوم المستخدم بإلغاء النقل."
+
+#. module: hr_employee_transfer
+#: model_terms:ir.ui.view,arch_db:hr_employee_transfer.employee_transfer
+msgid "Cancel"
+msgstr "إلغاء"
 
 #. module: hr_employee_transfer
 #: model:ir.model.fields.selection,name:hr_employee_transfer.selection__employee_transfer__state__cancel
@@ -26,14 +39,9 @@ msgid "Cancelled"
 msgstr "ملغي"
 
 #. module: hr_employee_transfer
-#: model:ir.model.fields,help:hr_employee_transfer.field_employee_transfer__employee_id
-msgid "Choose the employee you intend to transfer"
-msgstr "حدد الموظف الذي ستنقله"
-
-#. module: hr_employee_transfer
-#: model_terms:ir.actions.act_window,help:hr_employee_transfer.employee_transfer_action
+#: model_terms:ir.actions.act_window,help:hr_employee_transfer.action_employee_transfer
 msgid "Click to create a new Employee Transfer."
-msgstr "انقر لإنشاء نقل موظف جديد"
+msgstr ".انقر لإنشاء نقل موظف جديد"
 
 #. module: hr_employee_transfer
 #: model:ir.model.fields,field_description:hr_employee_transfer.field_employee_transfer__company_id
@@ -42,8 +50,8 @@ msgid "Company"
 msgstr "الشركة"
 
 #. module: hr_employee_transfer
-#. odoo-python
 #: code:addons/hr_employee_transfer/models/employee_transfer.py:0
+#: model:ir.model,name:hr_employee_transfer.model_hr_contract
 #, python-format
 msgid "Contract"
 msgstr "عقد"
@@ -59,7 +67,8 @@ msgid "Created on"
 msgstr "تم إنشاؤها على"
 
 #. module: hr_employee_transfer
-#: model:ir.model.fields,field_description:hr_employee_transfer.field_employee_transfer__transfer_date
+#: model:ir.model.fields,field_description:hr_employee_transfer.field_employee_transfer__date
+#: model:ir.model.fields,help:hr_employee_transfer.field_employee_transfer__date
 msgid "Date"
 msgstr "تاريخ"
 
@@ -70,38 +79,38 @@ msgstr "اسم العرض"
 
 #. module: hr_employee_transfer
 #: model:ir.model.fields.selection,name:hr_employee_transfer.selection__employee_transfer__state__done
-#: model_terms:ir.ui.view,arch_db:hr_employee_transfer.employee_transfer_view_search
+#: model_terms:ir.ui.view,arch_db:hr_employee_transfer.view_employee_transfer_filter
 msgid "Done"
 msgstr "منجز"
 
 #. module: hr_employee_transfer
-#: model_terms:ir.ui.view,arch_db:hr_employee_transfer.employee_transfer_view_search
+#: model_terms:ir.ui.view,arch_db:hr_employee_transfer.view_employee_transfer_filter
 msgid "Draft"
-msgstr ""
+msgstr "مشروع"
 
 #. module: hr_employee_transfer
 #: model:ir.model.fields,field_description:hr_employee_transfer.field_employee_transfer__employee_id
-#: model_terms:ir.ui.view,arch_db:hr_employee_transfer.employee_transfer_view_search
+#: model_terms:ir.ui.view,arch_db:hr_employee_transfer.view_employee_transfer_filter
 msgid "Employee"
 msgstr "الموظف"
 
 #. module: hr_employee_transfer
-#: model:ir.model,name:hr_employee_transfer.model_hr_contract
-msgid "Employee Contract"
-msgstr "عقد"
-
-#. module: hr_employee_transfer
 #: model:ir.model,name:hr_employee_transfer.model_employee_transfer
-#: model_terms:ir.ui.view,arch_db:hr_employee_transfer.employee_transfer_view_form
-#: model_terms:ir.ui.view,arch_db:hr_employee_transfer.employee_transfer_view_search
-#: model_terms:ir.ui.view,arch_db:hr_employee_transfer.employee_transfer_view_tree
+#: model_terms:ir.ui.view,arch_db:hr_employee_transfer.employee_transfer
+#: model_terms:ir.ui.view,arch_db:hr_employee_transfer.employee_transfer_tree
+#: model_terms:ir.ui.view,arch_db:hr_employee_transfer.view_employee_transfer_filter
 msgid "Employee Transfer"
 msgstr "نقل الموظف"
 
 #. module: hr_employee_transfer
-#: model_terms:ir.ui.view,arch_db:hr_employee_transfer.employee_transfer_view_search
+#: model:ir.model.fields,help:hr_employee_transfer.field_employee_transfer__name
+msgid "Give a name to the Transfer"
+msgstr "إعطاء اسم للنقل"
+
+#. module: hr_employee_transfer
+#: model_terms:ir.ui.view,arch_db:hr_employee_transfer.view_employee_transfer_filter
 msgid "Group By"
-msgstr ""
+msgstr "مجموعة من"
 
 #. module: hr_employee_transfer
 #: model:ir.model.fields,field_description:hr_employee_transfer.field_employee_transfer__id
@@ -110,9 +119,14 @@ msgstr "هوية شخصية"
 
 #. module: hr_employee_transfer
 #: model:ir.model.fields,field_description:hr_employee_transfer.field_employee_transfer__note
-#: model_terms:ir.ui.view,arch_db:hr_employee_transfer.employee_transfer_view_form
+#: model_terms:ir.ui.view,arch_db:hr_employee_transfer.employee_transfer
 msgid "Internal Notes"
 msgstr "ملاحظات داخلية"
+
+#. module: hr_employee_transfer
+#: model:ir.model.fields,field_description:hr_employee_transfer.field_employee_transfer____last_update
+msgid "Last Modified on"
+msgstr "آخر تعديل في"
 
 #. module: hr_employee_transfer
 #: model:ir.model.fields,field_description:hr_employee_transfer.field_employee_transfer__write_uid
@@ -126,17 +140,11 @@ msgstr "آخر تحديث في"
 
 #. module: hr_employee_transfer
 #: model:ir.model.fields,field_description:hr_employee_transfer.field_employee_transfer__name
-#: model_terms:ir.ui.view,arch_db:hr_employee_transfer.employee_transfer_view_form
+#: model_terms:ir.ui.view,arch_db:hr_employee_transfer.employee_transfer
 msgid "Name"
 msgstr "اسم"
 
 #. module: hr_employee_transfer
-#: model:ir.model.fields,help:hr_employee_transfer.field_employee_transfer__name
-msgid "Name of the Transfer"
-msgstr "إعطاء اسم للنقل"
-
-#. module: hr_employee_transfer
-#. odoo-python
 #: code:addons/hr_employee_transfer/models/employee_transfer.py:0
 #: model:ir.model.fields.selection,name:hr_employee_transfer.selection__employee_transfer__state__draft
 #, python-format
@@ -144,48 +152,34 @@ msgid "New"
 msgstr "جديد"
 
 #. module: hr_employee_transfer
-#: model:ir.model.fields,help:hr_employee_transfer.field_employee_transfer__state
-msgid ""
-"New: Transfer is created and not confirmed.\n"
-"                Transferred: Transfer is confirmed. Transfer stays in this status untill the transferred Branch receive \n"
-"                the employee.\n"
-"                Done: Employee is Joined/Received in the transferred Branch.\n"
-"               Cancelled: Transfer is cancelled."
-msgstr ""
-" * يتم استخدام حالة 'المسودة' عند إنشاء عملية نقل ونقل غير مؤكد.\n"
-" * يتم استخدام الحالة 'المنقولة' عندما يؤكد المستخدم عملية النقل. يبقى في وضع مفتوح حتى يستقبل الفرع / الشركة الأخرى الموظف.\n"
-" * يتم تعيين حالة 'تم' تلقائيًا عند انضمام / تلقي الموظف.\n"
-" * يتم استخدام حالة 'تم الإلغاء' عندما يقوم المستخدم بإلغاء النقل."
-
-#. module: hr_employee_transfer
 #: model:ir.model.fields,field_description:hr_employee_transfer.field_employee_transfer__old_employee_id
 msgid "Old Employee"
 msgstr "موظف قديم"
 
 #. module: hr_employee_transfer
-#: model:ir.model.fields,help:hr_employee_transfer.field_employee_transfer__old_employee_id
-msgid "Old employee details"
-msgstr ""
-
-#. module: hr_employee_transfer
-#: model_terms:ir.ui.view,arch_db:hr_employee_transfer.employee_transfer_view_form
+#: model_terms:ir.ui.view,arch_db:hr_employee_transfer.employee_transfer
 msgid "Receive"
-msgstr "يستلم"
+msgstr "تسلم"
 
 #. module: hr_employee_transfer
-#: model:ir.model.fields,field_description:hr_employee_transfer.field_employee_transfer__responsible_employee_id
+#: model:ir.model.fields,field_description:hr_employee_transfer.field_employee_transfer__responsible
 msgid "Responsible"
 msgstr "مسؤول"
 
 #. module: hr_employee_transfer
-#: model_terms:ir.ui.view,arch_db:hr_employee_transfer.employee_transfer_view_search
+#: model_terms:ir.ui.view,arch_db:hr_employee_transfer.view_employee_transfer_filter
 msgid "Responsible Person"
 msgstr "شخص مسؤول"
 
 #. module: hr_employee_transfer
-#: model:ir.model.fields,help:hr_employee_transfer.field_employee_transfer__responsible_employee_id
-msgid "The person responsible for the transfer"
+#: model:ir.model.fields,help:hr_employee_transfer.field_employee_transfer__responsible
+msgid "Responsible person for the transfer"
 msgstr "الشخص المسؤول عن التحويل"
+
+#. module: hr_employee_transfer
+#: model:ir.model.fields,help:hr_employee_transfer.field_employee_transfer__employee_id
+msgid "Select the employee you are going to transfer"
+msgstr "حدد الموظف الذي ستنقله"
 
 #. module: hr_employee_transfer
 #: model:ir.model.fields,help:hr_employee_transfer.field_employee_transfer__note
@@ -194,40 +188,36 @@ msgstr "حدد ملاحظات للتحويل إن وجدت"
 
 #. module: hr_employee_transfer
 #: model:ir.model.fields,field_description:hr_employee_transfer.field_employee_transfer__state
-#: model_terms:ir.ui.view,arch_db:hr_employee_transfer.employee_transfer_view_search
+#: model_terms:ir.ui.view,arch_db:hr_employee_transfer.view_employee_transfer_filter
 msgid "Status"
 msgstr "الحالة"
 
 #. module: hr_employee_transfer
-#. odoo-python
 #: code:addons/hr_employee_transfer/models/employee_transfer.py:0
 #, python-format
 msgid ""
-"This employee will remains on the same company until the Transferred branch"
-" accept this transfer request"
-msgstr "سيبقى هذا الموظف في نفس الشركة حتى يقبل الفرع المنقول طلب النقل هذا"
+"This employee will remains on the same company until the Transferred Company"
+"accept this transfer request"
+msgstr ""
+"سيبقى هذا الموظف في نفس الشركة حتى الفرع المحول"
+"قبول طلب النقل هذا"
 
 #. module: hr_employee_transfer
-#: model:ir.actions.act_window,name:hr_employee_transfer.employee_transfer_action
-#: model_terms:ir.ui.view,arch_db:hr_employee_transfer.employee_transfer_view_form
+#: model:ir.actions.act_window,name:hr_employee_transfer.action_employee_transfer
+#: model_terms:ir.ui.view,arch_db:hr_employee_transfer.employee_transfer
 msgid "Transfer"
 msgstr "نقل"
 
 #. module: hr_employee_transfer
-#: model:ir.model.fields,field_description:hr_employee_transfer.field_employee_transfer__transfer_company_id
+#: model:ir.model.fields,field_description:hr_employee_transfer.field_employee_transfer__company
 msgid "Transfer To"
-msgstr "نقل إلى"
-
-#. module: hr_employee_transfer
-#: model:ir.model.fields,help:hr_employee_transfer.field_employee_transfer__transfer_date
-msgid "Transfer date"
-msgstr "تاريخ التحويل"
+msgstr "حول إلى"
 
 #. module: hr_employee_transfer
 #: model:ir.model.fields,field_description:hr_employee_transfer.field_employee_transfer__transferred
 #: model:ir.model.fields,help:hr_employee_transfer.field_employee_transfer__transferred
 #: model:ir.model.fields.selection,name:hr_employee_transfer.selection__employee_transfer__state__transfer
-#: model_terms:ir.ui.view,arch_db:hr_employee_transfer.employee_transfer_view_search
+#: model_terms:ir.ui.view,arch_db:hr_employee_transfer.view_employee_transfer_filter
 msgid "Transferred"
 msgstr "نقل"
 
@@ -238,44 +228,42 @@ msgstr "الموظف المحول"
 
 #. module: hr_employee_transfer
 #: model:ir.model.fields,help:hr_employee_transfer.field_hr_contract__emp_transfer
-msgid "Employee who has been transferred"
-msgstr "الموظف الذي تم نقله"
+msgid "Transferred employee"
+msgstr "موظف منقول"
 
 #. module: hr_employee_transfer
-#: model:ir.model.fields,help:hr_employee_transfer.field_employee_transfer__transfer_company_id
-msgid "Select the company to which the employee is being transferred"
-msgstr "اختيار الشركة المنقول إليها الموظف"
+#: model:ir.model.fields,help:hr_employee_transfer.field_employee_transfer__Company
+msgid "Transferring Company"
+msgstr "تحويل فرع / شركة"
 
 #. module: hr_employee_transfer
-#: model:ir.ui.menu,name:hr_employee_transfer.employee_transfer_menu
+#: model:ir.ui.menu,name:hr_employee_transfer.menu_employee_transfer
 msgid "Transfers"
-msgstr "التحويلات"
+msgstr "نقل"
 
 #. module: hr_employee_transfer
-#: model_terms:ir.actions.act_window,help:hr_employee_transfer.employee_transfer_action
+#: model_terms:ir.actions.act_window,help:hr_employee_transfer.action_employee_transfer
 msgid ""
 "Use this menu to browse previous transfer. To record new\n"
 "                transfer, you may use the create button."
-msgstr "استخدم هذه القائمة لاستعراض عمليات النقل السابقة. لتسجيل الجديد
-النقل، يمكنك استخدام زر الإنشاء."
+msgstr ""
+"استخدم هذه القائمة لتصفح النقل السابق. لتسجيل جديد\n"
+"                نقل ، يمكنك استخدام زر إنشاء."
 
 #. module: hr_employee_transfer
-#. odoo-python
 #: code:addons/hr_employee_transfer/models/employee_transfer.py:0
 #, python-format
 msgid "Warning"
 msgstr "تحذير"
 
 #. module: hr_employee_transfer
-#. odoo-python
 #: code:addons/hr_employee_transfer/models/employee_transfer.py:0
 #, python-format
-msgid "You cannot transfer an Employee to the same Company."
-msgstr "لا يمكنك نقل موظف إلى نفس الشركة"
+msgid "You cannot transfer to the same company."
+msgstr "لا يمكنك التحويل لنفس الشركة."
 
 #. module: hr_employee_transfer
-#. odoo-python
 #: code:addons/hr_employee_transfer/models/employee_transfer.py:0
 #, python-format
-msgid "You should select a Company."
-msgstr "يجب عليك تحديد الشركة"
+msgid "You should select the company."
+msgstr "يجب عليك تحديد الفرع / الشركة."

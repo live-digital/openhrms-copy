@@ -1,11 +1,11 @@
 ## Module <hrms_dashboard>
 
-#### 28.11.2023
-#### Version 17.0.1.0.0
+#### 18.10.2022
+#### Version 16.0.1.0.0
 ##### ADD
-- Initial commit for Open HRMS dashboard
+- Initial commit for Open HRMS Project
 
-#### 08.12.2023
-#### Version 17.0.1.0.1
-##### UPDT
-- Bug Fix-Resolved the rendering error in the dashboard.
+#### 30.01.2023
+#### Version 16.0.1.0.1
+##### FIX
+- fix for style issue in Tree views

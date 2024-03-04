@@ -1,7 +1,11 @@
-## Module <hr_reminder>
+## Module hr_reminder
 
-#### 28.11.2023
-#### Version 17.0.1.0.0
+#### 04.11.2020
+#### Version 16.0.1.0.0
 ##### ADD
+- Initial commit for OpenHrms Project
 
-- Initial commit for OpenHRMS Reminders Todo
+#### 04.05.2023
+#### Version 16.0.1.0.0
+##### UPDATE
+- Change the XML and JS file

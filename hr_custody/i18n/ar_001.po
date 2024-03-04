@@ -20,13 +20,13 @@ msgstr ""
 msgid ""
 "\n"
 "                    \n"
-"                          <p>Dear <t t-out="object.employee_id.name"></t>,<br/><br/>
-                          You are in possession of the company asset
-                          <strong><t t-out="object.custody_property_id.name"></t></strong>
-                          since <strong><t t-out="object.return_date"></t>.</strong><br/><br/>
-                          Please kindly return the property as soon as possible.<br/><br/></p>
-                          Regards,<br/><br/>
-                          <t t-out="object.company_id.name"></t>\n"
+"                          <p>Dear ${(object.employee.name)},<br/><br/>\n"
+"                          You are in possession of the company asset\n"
+"                          <strong>\"${(object.custody_name.name)}\"</strong>\n"
+"                          since <strong>${(object.return_date)}.</strong><br/><br/>\n"
+"                          Please kindly return the property as soon as possible.<br/><br/></p>\n"
+"                          Regards,<br/><br/>\n"
+"                          ${(object.company_id.name)}\n"
 "            "
 msgstr ""
 
@@ -148,7 +148,7 @@ msgstr "عهدة"
 #. module: hr_custody
 #: model:ir.actions.act_window,name:hr_custody.action_report_custody
 #: model:ir.model,name:hr_custody.model_report_custody
-#: model:ir.ui.menu,name:hr_custody.custody_report_menu_custody_analysis
+#: model:ir.ui.menu,name:hr_custody.menu_custody_analysis
 msgid "Custody Analysis"
 msgstr "تحليل الحراسة"
 
@@ -329,7 +329,7 @@ msgid "Last Updated on"
 msgstr "آخر تحديث في"
 
 #. module: hr_custody
-#: model:ir.model.fields,field_description:hr_custody.field_hr_custody__is_mail_send
+#: model:ir.model.fields,field_description:hr_custody.field_hr_custody__mail_send
 msgid "Mail Send"
 msgstr "إرسال البريد"
 
@@ -403,8 +403,8 @@ msgstr "ملاحظات"
 
 #. module: hr_custody
 #: model:mail.template,subject:hr_custody.custody_email_notification_template
-msgid "Notification to return company asset-${object.custody_property_id.name}"
-msgstr " ${object.custody_property_id.name}-إشعار للعودة أصول الشركة"
+msgid "Notification to return company asset-${object.custody_name.name}"
+msgstr " ${object.custody_name.name}-إشعار للعودة أصول الشركة"
 
 #. module: hr_custody
 #: model:ir.model.fields,field_description:hr_custody.field_hr_custody__message_needaction_counter
@@ -449,7 +449,7 @@ msgstr "منتجات"
 
 #. module: hr_custody
 #: model:ir.actions.act_window,name:hr_custody.action_hr_property
-#: model:ir.model.fields,field_description:hr_custody.field_hr_custody__custody_property_id
+#: model:ir.model.fields,field_description:hr_custody.field_hr_custody__custody_name
 #: model:ir.ui.menu,name:hr_custody.hr_property_menu
 msgid "Property"
 msgstr "خاصية"
@@ -457,7 +457,7 @@ msgstr "خاصية"
 #. module: hr_custody
 #: model:ir.model,name:hr_custody.model_custody_property
 #: model:ir.model.fields,field_description:hr_custody.field_custody_property__name
-#: model:ir.model.fields,field_description:hr_custody.field_report_custody__custody_property_id
+#: model:ir.model.fields,field_description:hr_custody.field_report_custody__custody_name
 msgid "Property Name"
 msgstr "اسم الخاصية"
 
@@ -501,7 +501,7 @@ msgid "Renew"
 msgstr "جدد"
 
 #. module: hr_custody
-#: model:ir.model.fields,field_description:hr_custody.field_hr_custody__is_renew_reject
+#: model:ir.model.fields,field_description:hr_custody.field_hr_custody__renew_reject
 msgid "Renew Reject"
 msgstr "تجديد رفض"
 
@@ -511,7 +511,7 @@ msgid "Renew Rejected Reason"
 msgstr "تجديد رفض السبب"
 
 #. module: hr_custody
-#: model:ir.model.fields,field_description:hr_custody.field_hr_custody__is_renew_return_date
+#: model:ir.model.fields,field_description:hr_custody.field_hr_custody__renew_return_date
 msgid "Renew Return Date"
 msgstr "تجديد تاريخ العودة"
 
@@ -533,12 +533,12 @@ msgstr "طلب تجديد"
 #. module: hr_custody
 #: model:ir.model.fields,field_description:hr_custody.field_hr_custody__renew_date
 #: model:ir.model.fields,field_description:hr_custody.field_report_custody__renew_date
-#: model:ir.model.fields,field_description:hr_custody.field_report_custody__is_renew_return_date
+#: model:ir.model.fields,field_description:hr_custody.field_report_custody__renew_return_date
 msgid "Renewal Return Date"
 msgstr "تاريخ العودة التجديد"
 
 #. module: hr_custody
-#: model:ir.ui.menu,name:hr_custody.custody_report_menu
+#: model:ir.ui.menu,name:hr_custody.menu_custody_report
 msgid "Report"
 msgstr "نقل"
 
@@ -687,5 +687,5 @@ msgstr "أو"
 
 #. module: hr_custody
 #: model:ir.model,name:hr_custody.model_wizard_reason
-msgid "return.reason"
+msgid "wizard.reason"
 msgstr ""

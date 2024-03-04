@@ -1,9 +1,4 @@
-.. image:: https://img.shields.io/badge/license-LGPL--3-green.svg
-    :target: https://www.gnu.org/licenses/lgpl-3.0-standalone.html
-    :alt: License: LGPL-3
-
-
-Open HRMS Custody
+Open HRMS Custody Management
 ============================
 
 Functionality to give and track the assets of a company to employees.
@@ -11,44 +6,45 @@ Functionality to give and track the assets of a company to employees.
  - Can create custody contract with an employee
  - Can take the report of custody
 
-Configuration
-=============
-* No additional configurations needed
+Depends
+=======
+[hr, mail, hr_employee_updation] addon Odoo
+
+Tech
+====
+* [Python] - Models
+* [XML] - Odoo views
+
+Installation
+============
+- www.odoo.com/documentation/16.0/setup/install.html
+- Install our custom addon
 
 License
 =======
-General Public License, Version 3 (LGPL v3).
-(https://www.gnu.org/licenses/lgpl-3.0-standalone.html)
-
-Company
--------
-* `Cybrosys Techno Solutions <https://cybrosys.com/>`
-
-Credits
-------
-Developers: (V15) Mily Shajan
-            (V16) Aiswarya M
-            (V17) Janish Babu EK
-Contact: odoo@cybrosys.com
-
-Contacts
---------
-* Mail Contact : odoo@cybrosys.com
-* Website : https://cybrosys.com
+GNU AFFERO GENERAL PUBLIC LICENSE, Version 3 (AGPLv3)
+(http://www.gnu.org/licenses/agpl.html)
 
 Bug Tracker
 ===========
 Bugs are tracked on GitHub Issues. In case of trouble, please check there if your issue has already been reported.
 
+Credits
+=======
+* Cybrosys Techno Solutions <https://www.cybrosys.com>
+
+Author
+------
+
+Developers: Avinash Nk <odoo@cybrosys.com>
+            Jesni Banu <odoo@cybrosys.com>
+            Version 14: Muhammed Nafih <odoo@cybrosys.com>
+            Version 15:Mily Shajan <odoo@cybrosys.com>
+            Version 16:Aiswarya M<odoo@cybrosys.com>
+
 Maintainer
-==========
-.. image:: https://cybrosys.com/images/logo.png
-   :target: https://cybrosys.com
+----------
 
 This module is maintained by Cybrosys Technologies.
 
-For support and more information, please visit `Our Website <https://cybrosys.com/>`__
-
-Further information
-===================
-HTML Description: `<static/description/index.html>`__
+For support and more information, please visit https://www.cybrosys.com.

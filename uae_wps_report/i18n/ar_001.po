@@ -4908,8 +4908,8 @@ msgid "tester"
 msgstr "اختبار"
 
 #. module: uae_wps_report
-#: model:ir.model,name:uae_wps_report.model_wps_report
-msgid "wps.report"
+#: model:ir.model,name:uae_wps_report.model_wps_wizard
+msgid "wps.wizard"
 msgstr ""
 
 #. module: oh_hr_zk_attendance

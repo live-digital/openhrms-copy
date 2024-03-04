@@ -1,43 +1,43 @@
 # -*- coding: utf-8 -*-
-################################################################################
-#    A part of Open HRMS Project <https://www.openhrms.com>
+#############################################################################
 #
 #    Cybrosys Technologies Pvt. Ltd.
-#    Copyright (C) 2023-TODAY Cybrosys Technologies (<https://www.cybrosys.com>)
-#    Author: Cybrosys Techno Solutions (<https://www.cybrosys.com>)
 #
-#    This program is free software: you can modify
-#    it under the terms of the GNU Affero General Public License (AGPL) as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
+#    Copyright (C) 2022-TODAY Cybrosys Technologies(<https://www.cybrosys.com>)
+#    Author: Cybrosys Techno Solutions(<https://www.cybrosys.com>)
+#
+#    You can modify it under the terms of the GNU LESSER
+#    GENERAL PUBLIC LICENSE (LGPL v3), Version 3.
 #
 #    This program is distributed in the hope that it will be useful,
 #    but WITHOUT ANY WARRANTY; without even the implied warranty of
 #    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
+#    GNU LESSER GENERAL PUBLIC LICENSE (LGPL v3) for more details.
 #
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+#    You should have received a copy of the GNU LESSER GENERAL PUBLIC LICENSE
+#    (LGPL v3) along with this program.
+#    If not, see <http://www.gnu.org/licenses/>.
 #
-###############################################################################
+#############################################################################
 {
     'name': 'Open HRMS Biometric Device Integration',
-    'version': '17.0.1.0.0',
-    'category': 'Human Resources',
-    'summary': 'Integrating Biometric Device With HR Attendance (Face + Thumb)',
+    'version': '16.0.1.1.0',
+    'summary': """Integrating Biometric Device With HR Attendance (Face + Thumb)""",
     'description': 'This module integrates Odoo with the biometric device(Model: ZKteco uFace 202)',
-    'author': 'Cybrosys Techno solutions',
-    'maintainer': 'Cybrosys Techno Solutions',
+    'category': 'Generic Modules/Human Resources',
+     'live_test_url': 'https://youtu.be/RHSHHU7nzTo',
+    'author': 'Cybrosys Techno Solutions, Mostafa Shokiel,Open HRMS',
+    'live_test_url': 'https://youtu.be/RHSHHU7nzTo',
     'company': 'Cybrosys Techno Solutions',
-    'website': 'https://www.cybrosys.com',
+    'website': "http://www.openhrms.com",
     'depends': ['base_setup', 'hr_attendance'],
     'data': [
         'security/ir.model.access.csv',
-        'views/zk_machine_views.xml',
-        'views/zk_machine_attendance_views.xml',
+        'views/zk_machine_view.xml',
+        'views/zk_machine_attendance_view.xml',
         'data/download_data.xml'
     ],
-    'images': ['static/description/banner.jpg'],
+    'images': ['static/description/banner.png'],
     'license': 'AGPL-3',
     'installable': True,
     'auto_install': False,

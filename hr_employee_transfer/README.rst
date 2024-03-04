@@ -1,32 +1,37 @@
-.. image:: https://img.shields.io/badge/license-LGPL--3-green.svg
-    :target: http://www.gnu.org/licenses/lgpl-3.0-standalone.html
-    :alt: License: LGPL-3
+.. image:: https://img.shields.io/badge/licence-AGPL--3-blue.svg
+    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
+    :alt: License: AGPL-3
 
-Open HRMS Branch Transfer
-========================
+Open HRMS Company Transfer
+==========================
 Transfer Employees from one company to another company.
 
 Configuration
 =============
-* No additional configurations needed
+
+
+Installation
+============
+- www.odoo.com/documentation/16.0/setup/install.html
+- Install our custom addon
+
+License
+-------
+GNU Affero General Public License, Version 3 (AGPL v3).
+(https://www.gnu.org/licenses/agpl-3.0-standalone.html)
 
 Company
 -------
 * `Cybrosys Techno Solutions <https://cybrosys.com/>`__
 
-License
--------
-GNU General Public License, Version 3 (LGPL v3).
-(https://www.gnu.org/licenses/lgpl-3.0-standalone.html)
-
 Credits
 -------
-* Developer: (V17) Aiswarya J P.
+* Developer: (v16) Hajaj @cybrosys
 
 Contacts
 --------
 * Mail Contact : odoo@cybrosys.com
-* Website : https://cybrosys.com, https://www.openhrms.com
+* Website : https://cybrosys.com
 
 Bug Tracker
 -----------

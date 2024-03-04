@@ -1,25 +1,4 @@
 # -*- coding: utf-8 -*-
-#############################################################################
-#    A part of Open HRMS Project <https://www.openhrms.com>
-#
-#    Cybrosys Technologies Pvt. Ltd.
-#
-#    Copyright (C) 2023-TODAY Cybrosys Technologies(<https://www.cybrosys.com>)
-#    Author: Cybrosys Techno Solutions(<https://www.cybrosys.com>)
-#
-#    You can modify it under the terms of the GNU LESSER
-#    GENERAL PUBLIC LICENSE (LGPL v3), Version 3.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU LESSER GENERAL PUBLIC LICENSE (LGPL v3) for more details.
-#
-#    You should have received a copy of the GNU LESSER GENERAL PUBLIC LICENSE
-#    (LGPL v3) along with this program.
-#    If not, see <http://www.gnu.org/licenses/>.
-#
-#############################################################################
 from odoo import api, fields, models
 
 
@@ -27,8 +6,7 @@ class OHRMSConfiguration(models.TransientModel):
     _inherit = 'res.config.settings'
 
     module_hr_custody = fields.Boolean(
-        string='Manage the company properties when it is in the custody '
-               'of an employee',
+        string='Manage the company properties when it is in the custody of an employee',
         help='Helps you to manage Custody Requests.\n'
              '- This installs the module Custody Management.')
     module_oh_employee_check_list = fields.Boolean(
@@ -56,29 +34,23 @@ class OHRMSConfiguration(models.TransientModel):
         help='Helps you to manage Vacation Management.\n'
              '- This installs the module Vacation Management.')
     module_oh_hr_zk_attendance = fields.Boolean(
-        string='Manage biometric device (Model: ZKteco uFace 202) integration '
-               'with HR attendance (Face + Thumb)',
+        string='Manage biometric device (Model: ZKteco uFace 202) integration with HR attendance (Face + Thumb)',
         help='Helps you to manage Biometric Device Integration.\n'
              '- This installs the module Biometric Device Integration.')
     test_module_hr_custody = fields.Boolean(default=False, invisible=True)
     test_oh_employee_check_list = fields.Boolean(default=False, invisible=True)
-    test_module_hr_employee_shift = fields.Boolean(default=False,
-                                                   invisible=True)
+    test_module_hr_employee_shift = fields.Boolean(default=False, invisible=True)
     test_module_hr_insurance = fields.Boolean(default=False, invisible=True)
-    test_module_oh_hr_lawsuit_management = fields.Boolean(default=False,
-                                                          invisible=True)
+    test_module_oh_hr_lawsuit_management = fields.Boolean(default=False, invisible=True)
     test_module_hr_resignation = fields.Boolean(default=False, invisible=True)
-    test_module_hr_vacation_mngmt = fields.Boolean(default=False,
-                                                   invisible=True)
-    test_module_oh_hr_zk_attendance = fields.Boolean(default=False,
-                                                     invisible=True)
+    test_module_hr_vacation_mngmt = fields.Boolean(default=False, invisible=True)
+    test_module_oh_hr_zk_attendance = fields.Boolean(default=False, invisible=True)
 
     @api.onchange('module_hr_custody')
     def onchange_module_hr_custody(self):
         for each in self:
             if each.module_hr_custody:
-                if not self.env['ir.module.module'].search(
-                        [('name', '=', 'hr_custody')]):
+                if not self.env['ir.module.module'].search([('name', '=', 'hr_custody')]):
                     each.test_module_hr_custody = True
                     each.module_hr_custody = False
                 else:
@@ -88,8 +60,7 @@ class OHRMSConfiguration(models.TransientModel):
     def onchange_module_oh_employee_check_list(self):
         for each in self:
             if each.module_oh_employee_check_list:
-                if not self.env['ir.module.module'].search(
-                        [('name', '=', 'oh_employee_check_list')]):
+                if not self.env['ir.module.module'].search([('name', '=', 'oh_employee_check_list')]):
                     each.test_oh_employee_check_list = True
                     each.module_oh_employee_check_list = False
                 else:
@@ -99,8 +70,7 @@ class OHRMSConfiguration(models.TransientModel):
     def onchange_module_hr_employee_shift(self):
         for each in self:
             if each.module_hr_employee_shift:
-                if not self.env['ir.module.module'].search(
-                        [('name', '=', 'hr_employee_shift')]):
+                if not self.env['ir.module.module'].search([('name', '=', 'hr_employee_shift')]):
                     each.test_module_hr_employee_shift = True
                     each.module_hr_employee_shift = False
                 else:
@@ -110,8 +80,7 @@ class OHRMSConfiguration(models.TransientModel):
     def onchange_module_hr_insurance(self):
         for each in self:
             if each.module_hr_insurance:
-                if not self.env['ir.module.module'].search(
-                        [('name', '=', 'hr_insurance')]):
+                if not self.env['ir.module.module'].search([('name', '=', 'hr_insurance')]):
                     each.test_module_hr_insurance = True
                     each.module_hr_insurance = False
                 else:
@@ -121,8 +90,7 @@ class OHRMSConfiguration(models.TransientModel):
     def onchange_module_oh_hr_lawsuit_management(self):
         for each in self:
             if each.module_oh_hr_lawsuit_management:
-                if not self.env['ir.module.module'].search(
-                        [('name', '=', 'oh_hr_lawsuit_management')]):
+                if not self.env['ir.module.module'].search([('name', '=', 'oh_hr_lawsuit_management')]):
                     each.test_module_oh_hr_lawsuit_management = True
                     each.module_oh_hr_lawsuit_management = False
                 else:
@@ -132,8 +100,7 @@ class OHRMSConfiguration(models.TransientModel):
     def onchange_module_hr_resignation(self):
         for each in self:
             if each.module_hr_resignation:
-                if not self.env['ir.module.module'].search(
-                        [('name', '=', 'hr_resignation')]):
+                if not self.env['ir.module.module'].search([('name', '=', 'hr_resignation')]):
                     each.test_module_hr_resignation = True
                     each.module_hr_resignation = False
                 else:
@@ -143,8 +110,7 @@ class OHRMSConfiguration(models.TransientModel):
     def onchange_module_hr_vacation_mngmt(self):
         for each in self:
             if each.module_hr_vacation_mngmt:
-                if not self.env['ir.module.module'].search(
-                        [('name', '=', 'hr_vacation_mngmt')]):
+                if not self.env['ir.module.module'].search([('name', '=', 'hr_vacation_mngmt')]):
                     each.test_module_hr_vacation_mngmt = True
                     each.module_hr_vacation_mngmt = False
                 else:
@@ -154,9 +120,10 @@ class OHRMSConfiguration(models.TransientModel):
     def onchange_module_oh_hr_zk_attendance(self):
         for each in self:
             if each.module_oh_hr_zk_attendance:
-                if not self.env['ir.module.module'].search(
-                        [('name', '=', 'oh_hr_zk_attendance')]):
+                if not self.env['ir.module.module'].search([('name', '=', 'oh_hr_zk_attendance')]):
                     each.test_module_oh_hr_zk_attendance = True
                     each.module_oh_hr_zk_attendance = False
                 else:
                     each.test_module_oh_hr_zk_attendance = False
+
+

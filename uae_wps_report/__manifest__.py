@@ -1,58 +1,56 @@
 # -*- coding: utf-8 -*-
-#############################################################################
-
+###################################################################################
+#    A part of Open HRMS Project <https://www.openhrms.com>
+#
 #    Cybrosys Technologies Pvt. Ltd.
 #
-#    Copyright (C) 2024-TODAY Cybrosys Technologies(<https://www.cybrosys.com>)
-#    Author: ASWIN A K (odoo@cybrosys.com)
+#    Copyright (C) 2019-TODAY Cybrosys Technologies (<https://www.cybrosys.com>).
+#    Author: Nishad (<https://www.cybrosys.com>)
 #
-#    You can modify it under the terms of the GNU LESSER
-#    GENERAL PUBLIC LICENSE (LGPL v3), Version 3.
+#    This program is free software: you can modify
+#    it under the terms of the GNU Affero General Public License (AGPL) as
+#    published by the Free Software Foundation, either version 3 of the
+#    License, or (at your option) any later version.
 #
 #    This program is distributed in the hope that it will be useful,
 #    but WITHOUT ANY WARRANTY; without even the implied warranty of
 #    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU LESSER GENERAL PUBLIC LICENSE (LGPL v3) for more details.
+#    GNU Affero General Public License for more details.
 #
-#    You should have received a copy of the GNU LESSER GENERAL PUBLIC LICENSE
-#    (LGPL v3) along with this program.
-#    If not, see <http://www.gnu.org/licenses/>.
+#    You should have received a copy of the GNU Affero General Public License
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
-#############################################################################
+###################################################################################
+
 {
     'name': ' WPS Report Generation for UAE',
-    'version': '17.0.1.0.0',
-    'category': 'Human Resources',
+    'version': '16.0.1.0.0',
     'summary': 'Open HRMS Wps Payroll System For UAE',
-    'description': 'The Wages Protection System(WPS) is an electronic system '
-                   'implemented by the GCC Countries to enable transparent '
-                   'Wage Payment.This System Generates a Salary '
-                   'InformationFile(SIF). And this file is acceptable by'
-                   ' the Ministry Of Labour.',
+    'category': 'Generic Modules/Human Resources',
     'author': 'Cybrosys Techno solutions,Open HRMS',
-    'company': 'Cybrosys Techno Solutions',
     'maintainer': 'Cybrosys Techno Solutions',
+    'company': 'Cybrosys Techno Solutions',
     'website': 'https://www.openhrms.com',
     'depends': [
+        'hr',
         'hr_payroll_community',
         'account',
         'hr_holidays',
     ],
     'data': [
+        'views/action_manager.xml',
+        'views/view.xml',
+        'wizard/wizard.xml',
         'security/ir.model.access.csv',
-        'views/hr_employee_views.xml',
-        'views/res_bank_views.xml',
-        'views/res_company_views.xml',
-        'wizard/wps_report_views.xml',
     ],
     'assets': {
         'web.assets_backend': [
             'uae_wps_report/static/src/js/action_manager.js',
         ],
     },
-    'images': ['static/description/banner.jpg'],
-    'license': 'LGPL-3',
+    'images': ['static/description/banner.png'],
     'installable': True,
-    'auto_install': False,
     'application': False,
+    'auto_install': False,
+    'license': 'AGPL-3',
 }

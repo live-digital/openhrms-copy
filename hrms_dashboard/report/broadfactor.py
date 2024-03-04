@@ -1,26 +1,6 @@
 # -*- coding: utf-8 -*-
-#############################################################################
-#    A part of Open HRMS Project <https://www.openhrms.com>
-#
-#    Cybrosys Technologies Pvt. Ltd.
-#
-#    Copyright (C) 2023-TODAY Cybrosys Technologies(<https://www.cybrosys.com>)
-#    Author: Cybrosys Techno Solutions(<https://www.cybrosys.com>)
-#
-#    You can modify it under the terms of the GNU LESSER
-#    GENERAL PUBLIC LICENSE (LGPL v3), Version 3.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU LESSER GENERAL PUBLIC LICENSE (LGPL v3) for more details.
-#
-#    You should have received a copy of the GNU LESSER GENERAL PUBLIC LICENSE
-#    (LGPL v3) along with this program.
-#    If not, see <http://www.gnu.org/licenses/>.
-#
-#############################################################################
-from datetime import date
+from datetime import date, datetime
+
 from odoo import tools
 from odoo import api, fields, models
 
@@ -41,12 +21,13 @@ class EmployeeBroadFactor(models.Model):
         self._cr.execute("""
             create or replace view hr_employee_broad_factor as (
                 select
-                    e.id, e.name, count(h.*) as no_of_occurrence,
+                    e.id,
+                    e.name, 
+                    count(h.*) as no_of_occurrence,
                     sum(h.number_of_days) as no_of_days,
                     count(h.*)*count(h.*)*sum(h.number_of_days) as broad_factor
                 from hr_employee e
-                    full join (select * from hr_leave where state = 'validate' 
-                    and date_to <= now()::timestamp) h
+                    full join (select * from hr_leave where state = 'validate' and date_to <= now()::timestamp) h
                     on e.id =h.employee_id
                 group by e.id
                )""")

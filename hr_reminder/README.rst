@@ -1,50 +1,42 @@
-.. image:: https://img.shields.io/badge/license-LGPL--3-green.svg
-    :target: https://www.gnu.org/licenses/lgpl-3.0-standalone.html
-    :alt: License: LGPL-3
+Open HRMS Reminders Todo V16
+============================
 
-Open HRMS Reminders Todo
-========================
-Odoo Open HRMS Reminder is a powerful and easy-to-use tool that can help you
-improve your HR processes and ensure that important events are never forgotten.
+HR Reminder For OHRMS
 
-Configuration
-=============
-- No configuration needed
-
-Company
--------
-*  `Cybrosys Techno Solutions <https://cybrosys.com/>`__
-
-License
+Depends
 =======
-General Public License v3.0 (LGPL v3)
-(https://www.gnu.org/licenses/lgpl-3.0-standalone.html)
+[hr] addon Odoo
 
-Credits
--------
-Developer : (V17) Arjun S
-            (V16) Sajna
-            (V15) Mily
-            (V14) Naveen V
+Tech
+====
+* [Python] - Models
+* [XML] - Odoo views
 
-Contacts
-________
-* Mail Contact : odoo@cybrosys.com
-* Website : http://www.cybrosys.com
+Installation
+============
+- www.odoo.com/documentation/14.0/setup/install.html
+- Install our custom addon
+
 
 Bug Tracker
-___________
+===========
 Bugs are tracked on GitHub Issues. In case of trouble, please check there if your issue has already been reported.
 
+Credits
+=======
+* Cybrosys Techno Solutions <https://www.cybrosys.com>
+
+Author
+------
+
+Developer: Treesa Maria Jude @ cybrosys
+	V14 - Naveen V @ cybrosys, odoo@cybrosys.in
+	V15 - Mily @ cybrosys, odoo@cybrosys.in
+    V16 - Sajna @ cybrosys, odoo@cybrosys.in
+
 Maintainer
-__________
-.. image:: https://cybrosys.com/images/logo.png
-   :target: https://cybrosys.com
+----------
 
 This module is maintained by Cybrosys Technologies.
 
-For support and more information, please visit `Our Website <https://cybrosys.com/>`__
-
-Further information
-___________________
-HTML Description: `<static/description/index.html>`__
+For support and more information, please visit https://www.cybrosys.com.

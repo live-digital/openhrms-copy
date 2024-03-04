@@ -1,28 +1,28 @@
-.. image:: https://img.shields.io/badge/license-LGPL--3-green.svg
-    :target: https://www.gnu.org/licenses/lgpl-3.0-standalone.html
-    :alt: License: LGPL-3
+.. image:: https://img.shields.io/badge/license-AGPL--3-blue.svg
+    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
+    :alt: License: AGPL-3
 
-Odoo17 Payroll
-==============
-Manage your employee payroll records.
+Odoo 16 Payroll
+===============
+Helps You To Manage Front Office Operations.
+
+Installation
+============
+* Just install the module.
 
 Configuration
 =============
-Nothing to configure.
+* No additional configurations needed
 
 Company
 -------
 * `Cybrosys Techno Solutions <https://cybrosys.com/>`__
 
-License
--------
-General Public License, v3.0 (LGPL v3).
-(https://www.gnu.org/licenses/lgpl-3.0-standalone.html)
 
 Credits
 -------
-* Developers: (V16) Sumith Sivan,
-              (V17) Farhana Jahan PT,
+* Developers:
+                version 16: Sumith Sivan @cybrosys
 
 Contacts
 --------

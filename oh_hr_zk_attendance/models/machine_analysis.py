@@ -1,35 +1,13 @@
 # -*- coding: utf-8 -*-
-################################################################################
-#    A part of Open HRMS Project <https://www.openhrms.com>
-#
-#    Cybrosys Technologies Pvt. Ltd.
-#    Copyright (C) 2023-TODAY Cybrosys Technologies (<https://www.cybrosys.com>)
-#    Author: Cybrosys Techno Solutions (<https://www.cybrosys.com>)
-#
-#    This program is free software: you can modify
-#    it under the terms of the GNU Affero General Public License (AGPL) as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
-#
-###############################################################################
 
 from odoo import tools
-from odoo import api, fields, models
+from odoo import models, fields, api, _
 
 
 class HrEmployee(models.Model):
     _inherit = 'hr.employee'
 
-    device_id = fields.Char(string='Biometric Device ID',
-                            help="Give the biometric device id")
+    device_id = fields.Char(string='Biometric Device ID', help="Give the biometric device id")
 
 
 class ZkMachine(models.Model):
@@ -41,8 +19,7 @@ class ZkMachine(models.Model):
         """overriding the __check_validity function for employee attendance."""
         pass
 
-    device_id = fields.Char(string='Biometric Device ID',
-                            help="Biometric device id")
+    device_id = fields.Char(string='Biometric Device ID', help="Biometric device id")
     punch_type = fields.Selection([('0', 'Check In'),
                                    ('1', 'Check Out'),
                                    ('2', 'Break Out'),
@@ -55,12 +32,9 @@ class ZkMachine(models.Model):
                                         ('15', 'Face'),
                                         ('2', 'Type_2'),
                                         ('3', 'Password'),
-                                        ('4', 'Card')], string='Category',
-                                       help="Select the attendance type")
-    punching_time = fields.Datetime(string='Punching Time',
-                                    help="Give the punching time")
-    address_id = fields.Many2one('res.partner', string='Working Address',
-                                 help="Address")
+                                        ('4', 'Card')], string='Category', help="Select the attendance type")
+    punching_time = fields.Datetime(string='Punching Time', help="Give the punching time")
+    address_id = fields.Many2one('res.partner', string='Working Address', help="Address")
 
 
 class ReportZkDevice(models.Model):
@@ -76,18 +50,14 @@ class ReportZkDevice(models.Model):
                                         ('2', 'Type_2'),
                                         ('3', 'Password'),
                                         ('4', 'Card')],
-                                       string='Category',
-                                       help="Select the attendance type")
+                                       string='Category', help="Select the attendance type")
     punch_type = fields.Selection([('0', 'Check In'),
                                    ('1', 'Check Out'),
                                    ('2', 'Break Out'),
                                    ('3', 'Break In'),
                                    ('4', 'Overtime In'),
-                                   ('5', 'Overtime Out')],
-                                  string='Punching Type',
-                                  help="Select the punch type")
-    punching_time = fields.Datetime(string='Punching Time',
-                                    help="Punching Time")
+                                   ('5', 'Overtime Out')], string='Punching Type', help="Select the punch type")
+    punching_time = fields.Datetime(string='Punching Time', help="Punching Time")
 
     def init(self):
         tools.drop_view_if_exists(self._cr, 'zk_report_daily_attendance')
@@ -113,3 +83,5 @@ class ReportZkDevice(models.Model):
             )
         """
         self._cr.execute(query)
+
+

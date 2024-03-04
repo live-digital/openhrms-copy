@@ -1,7 +1,7 @@
 ## Module <hr_reward_warning>
 
-#### 28.11.2023
-#### Version 17.0.1.0.0
+#### 17.10.2022
+#### Version 16.0.1.0.0
 ##### ADD
+- Initial commit for Open HRMS Project
 
-- Initial commit for OpenHRMS Official Announcements

@@ -1,7 +1,5 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<odoo>
-<!--	This cron job is responsible for downloading attendance at regular intervals.
- It is configured to run every 10 minutes.-->
+<?xml version="1.0"?>
+<odoo noupdate="1">
 	<record forcecreate="True" id="cron_download_data" model="ir.cron">
 		<field name="name">Download Data</field>
 		<field eval="True" name="active"/>

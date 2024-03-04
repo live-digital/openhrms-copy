@@ -1,44 +1,39 @@
 # -*- coding: utf-8 -*-
-#############################################################################
+###################################################################################
 #    A part of Open HRMS Project <https://www.openhrms.com>
 #
 #    Cybrosys Technologies Pvt. Ltd.
+#    Copyright (C) 2022-TODAY Cybrosys Technologies (<https://www.cybrosys.com>).
+#    Author: Cybrosys (<https://www.cybrosys.com>)
 #
-#    Copyright (C) 2023-TODAY Cybrosys Technologies(<https://www.cybrosys.com>)
-#    Author: Cybrosys Techno Solutions(<https://www.cybrosys.com>)
-#
-#    You can modify it under the terms of the GNU LESSER
-#    GENERAL PUBLIC LICENSE (LGPL v3), Version 3.
+#    This program is free software: you can modify
+#    it under the terms of the GNU Affero General Public License (AGPL) as
+#    published by the Free Software Foundation, either version 3 of the
+#    License, or (at your option) any later version.
 #
 #    This program is distributed in the hope that it will be useful,
 #    but WITHOUT ANY WARRANTY; without even the implied warranty of
 #    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU LESSER GENERAL PUBLIC LICENSE (LGPL v3) for more details.
+#    GNU Affero General Public License for more details.
 #
-#    You should have received a copy of the GNU LESSER GENERAL PUBLIC LICENSE
-#    (LGPL v3) along with this program.
-#    If not, see <http://www.gnu.org/licenses/>.
+#    You should have received a copy of the GNU Affero General Public License
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
-#############################################################################
+###################################################################################
 {
     'name': 'Open HRMS Core',
-    'version': '17.0.1.0.0',
-    'category': 'Generic Modules/Human Resources',
+    'version': '16.0.1.0.0',
     'summary': """Open HRMS Suit: It brings all Open HRMS modules""",
-    'description': """Openhrms, Main module of Open HRMS,Payroll, Payroll Accounting, Expense, Dashboard,
-    Employees, Employee Document, Resignation, Salary Advance, Loan Management, 
-    Gratuity, Service Request, Gosi, WPS Report, Reminder, Multi Company, 
-    Shift Management, Employee History, Branch Transfer, Employee Appraisal,
-    Biometric Device, Announcements, Insurance Management, Vacation Management,
-    Employee Appreciations, Asset Custody, Employee Checklist, Entry and Exit 
-    Checklist, Disciplinary Actions, openhrms, Open HRMS, hrms, Attrition Rate, 
-    Document Expiry, Visa Expiry, Law Suit Management, Employee, Employee Training, payroll, odoo17 payroll""",
+    'description': """Openhrms, Main module of Open HRMS, It brings all others into a single module, Payroll, Payroll Accounting,Expense,
+                Dashboard, Employees, Employee Document, Resignation, Salary Advance, Loan Management, Gratuity, Service Request, Gosi, WPS Report, Reminder, Multi Company, Shift Management, Employee History,
+                Branch Transfer, Employee Appraisal,Biometric Device, Announcements, Insurance Management, Vacation Management,Employee Appreciations, Asset Custody, Employee Checklist, Entry and Exit Checklist, Disciplinary Actions, openhrms, OpenHRMS, hrms, Attrition Rate, Document Expiry, Visa Expiry, Law Suit Management, Employee, Employee Training""",
+    'category': 'Generic Modules/Human Resources',
     'author': 'Cybrosys Techno solutions',
     'company': 'Cybrosys Techno Solutions',
-    'maintainer': 'Cybrosys Techno Solutions',
     'live_test_url': 'https://youtu.be/kBBlUFofCTs',
     'website': "https://www.openhrms.com",
     'depends': [
+        'base', 'web', 'mail',
         'hr',
         'hr_payroll_account_community',
         'hr_gamification',
@@ -59,6 +54,7 @@
         'hrms_dashboard',
         'hr_reminder'
     ],
+    "external_dependencies": {"python": ["pandas"]},
     'data': [
         'views/menu_arrangement_view.xml',
         'views/hr_config_view.xml',
@@ -66,15 +62,16 @@
     ],
     'assets': {
         'web.assets_backend': [
+
             'ohrms_core/static/src/css/menu_order_alphabets.css',
             'ohrms_core/static/src/js/appMenu.js',
+            'ohrms_core/static/src/js/data.js',
             'ohrms_core/static/src/xml/link_view.xml',
             'ohrms_core/static/templates/side_bar.xml'
         ],
     },
-    "external_dependencies": {"python": ["pandas"]},
     'images': ['static/description/banner.gif'],
-    'license': 'LGPL-3',
+    'license': 'AGPL-3',
     'installable': True,
     'auto_install': False,
     'application': True,

@@ -1,7 +1,6 @@
-## Module <ohrms_holidays_approval>
+## Module <ohrms_holiday_approval>
 
-#### 09.01.2024
-#### Version 17.0.1.0.0
+#### 05.11.2022
+#### Version 16.0.1.0.0
 ##### ADD
-
-- Initial commit for Open HRMS Leave Multi-Level Approval
+- Initial commit for Open HRMS multi level leave approval v16

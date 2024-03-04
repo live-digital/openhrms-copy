@@ -1,54 +1,50 @@
-# -*- coding: utf-8 -*-
-#############################################################################
+# -- coding: utf-8 --
+###################################################################################
 #    A part of Open HRMS Project <https://www.openhrms.com>
 #
 #    Cybrosys Technologies Pvt. Ltd.
+#    Copyright (C) 2022-TODAY Cybrosys Technologies (<https://www.cybrosys.com>).
+#    Author: Cybrosys (<https://www.cybrosys.com>)
 #
-#    Copyright (C) 2023-TODAY Cybrosys Technologies(<https://www.cybrosys.com>)
-#    Author: Cybrosys Techno Solutions(<https://www.cybrosys.com>)
-#
-#    You can modify it under the terms of the GNU LESSER
-#    GENERAL PUBLIC LICENSE (LGPL v3), Version 3.
+#    This program is free software: you can modify
+#    it under the terms of the GNU Affero General Public License (AGPL) as
+#    published by the Free Software Foundation, either version 3 of the
+#    License, or (at your option) any later version.
 #
 #    This program is distributed in the hope that it will be useful,
 #    but WITHOUT ANY WARRANTY; without even the implied warranty of
 #    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU LESSER GENERAL PUBLIC LICENSE (LGPL v3) for more details.
+#    GNU Affero General Public License for more details.
 #
-#    You should have received a copy of the GNU LESSER GENERAL PUBLIC LICENSE
-#    (LGPL v3) along with this program.
-#    If not, see <http://www.gnu.org/licenses/>.
+#    You should have received a copy of the GNU Affero General Public License
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
-#############################################################################
+###################################################################################
 {
     'name': 'Open HRMS Custody',
-    'version': '17.0.1.0.0',
-    'category': 'Human Resources',
-    'summary': """Manage the company properties""",
-    'description': 'Manage the company properties when it is in '
-                   'the custody of an employee',
-    'author': 'Cybrosys Techno solutions',
+    'version': '16.0.1.0.0',
+    'summary': """Manage the company properties when it is in the custody of an employee""",
+    'description': 'Manage the company properties when it is in the custody of an employee',
+    'live_test_url': 'https://youtu.be/rd62HYzZxFI',
+    'category': 'Generic Modules/Human Resources',
+    'author': 'Cybrosys Techno solutions,Open HRMS',
     'company': 'Cybrosys Techno Solutions',
     'maintainer': 'Cybrosys Techno Solutions',
-    'website': "https://www.cybrosys.com",
-    'live_test_url': 'https://youtu.be/rd62HYzZxFI',
-    'depends': ['hr', 'mail', 'hr_employee_updation', 'base'],
+    'website': "https://www.openhrms.com",
+    'depends': ['hr', 'mail', 'hr_employee_updation', 'product'],
     'data': [
-        'security/custody_security.xml',
         'security/ir.model.access.csv',
-        'data/custody_sequence_data.xml',
-        'data/ir_cron_data.xml',
-        'data/mail_custody_notification_data.xml',
-        'wizard/property_return_reason_views.xml',
-        'wizard/property_return_date_views.xml',
-        'views/hr_custody_views.xml',
-        'views/custody_property_views.xml',
-        'views/hr_employee_views.xml',
-        'reports/report_custody_views.xml',
+        'security/custody_security.xml',
+        'views/wizard_reason_view.xml',
+        'views/custody_view.xml',
+        'views/hr_custody_notification.xml',
+        'views/hr_employee_view.xml',
+        'views/notification_mail.xml',
+        'reports/custody_report.xml'
     ],
     'demo': ['data/demo_data.xml'],
-    'images': ['static/description/banner.jpg'],
-    'license': 'LGPL-3',
+    'images': ['static/description/banner.png'],
+    'license': 'AGPL-3',
     'installable': True,
     'auto_install': False,
     'application': False,

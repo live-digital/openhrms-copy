@@ -5,7 +5,7 @@
         <field name="model">res.config.settings</field>
         <field name="inherit_id" ref="hr.res_config_settings_view_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//app[@name='hr']" position="inside">
+            <xpath expr="//div[@data-key='hr']" position="inside">
                 <style>
                     .label {
                     color: Red;
@@ -28,9 +28,9 @@
                             <label for="module_hr_custody"/>
                             <field name="test_module_hr_custody" invisible="True"/>
                             <span class="label danger"
-                                  invisible="test_module_hr_custody == False">
+                                  attrs="{'invisible':[('test_module_hr_custody','=', False)]}">
                                 Module is not Present in Your Repository.
-                                <a href="https://www.odoo.com/apps/modules/17.0/hr_custody/" target="_blank">Get
+                                <a href="https://www.odoo.com/apps/modules/13.0/hr_custody/" target="_blank">Get
                                     This App
                                 </a>
                             </span>
@@ -47,9 +47,9 @@
                             <label for="module_oh_employee_check_list"/>
                             <field name="test_oh_employee_check_list" invisible="True"/>
                             <span class="label danger"
-                                  invisible="test_oh_employee_check_list == False">
+                                  attrs="{'invisible':[('test_oh_employee_check_list','=', False)]}">
                                 Module is not Present in Your Repository.
-                                <a href="https://www.odoo.com/apps/modules/17.0/oh_employee_check_list/"
+                                <a href="https://www.odoo.com/apps/modules/13.0/oh_employee_check_list/"
                                    target="_blank">Get This App
                                 </a>
                             </span>
@@ -66,9 +66,9 @@
                             <label for="module_hr_insurance"/>
                             <field name="test_module_hr_insurance" invisible="True"/>
                             <span class="label danger"
-                                  invisible="test_module_hr_insurance == False">
+                                  attrs="{'invisible':[('test_module_hr_insurance','=', False)]}">
                                 Module is not Present in Your Repository.
-                                <a href="https://www.odoo.com/apps/modules/17.0/hr_insurance/" target="_blank">Get
+                                <a href="https://www.odoo.com/apps/modules/13.0/hr_insurance/" target="_blank">Get
                                     This App
                                 </a>
                             </span>
@@ -85,9 +85,9 @@
                             <label for="module_oh_hr_lawsuit_management"/>
                             <field name="test_module_oh_hr_lawsuit_management" invisible="True"/>
                             <span class="label danger"
-                                  invisible="test_module_oh_hr_lawsuit_management == False">
+                                  attrs="{'invisible':[('test_module_oh_hr_lawsuit_management','=', False)]}">
                                 Module is not Present in Your Repository.
-                                <a href="https://www.odoo.com/apps/modules/17.0/oh_hr_lawsuit_management/"
+                                <a href="https://www.odoo.com/apps/modules/13.0/oh_hr_lawsuit_management/"
                                    target="_blank">Get This App
                                 </a>
                             </span>
@@ -104,9 +104,9 @@
                             <label for="module_hr_resignation"/>
                             <field name="test_module_hr_resignation" invisible="True"/>
                             <span class="label danger"
-                                  invisible="test_module_hr_resignation == False">
+                                  attrs="{'invisible':[('test_module_hr_resignation','=', False)]}">
                                 Module is not Present in Your Repository.
-                                <a href="https://www.odoo.com/apps/modules/17.0/hr_resignation/" target="_blank">Get
+                                <a href="https://www.odoo.com/apps/modules/13.0/hr_resignation/" target="_blank">Get
                                     This App
                                 </a>
                             </span>
@@ -123,9 +123,9 @@
                             <label for="module_oh_hr_zk_attendance"/>
                             <field name="test_module_oh_hr_zk_attendance" invisible="True"/>
                             <span class="label danger"
-                                  invisible="test_module_oh_hr_zk_attendance == False">
+                                  attrs="{'invisible':[('test_module_oh_hr_zk_attendance','=', False)]}">
                                 Module is not Present in Your Repository.
-                                <a href="https://www.odoo.com/apps/modules/17.0/oh_hr_zk_attendance/"
+                                <a href="https://www.odoo.com/apps/modules/13.0/oh_hr_zk_attendance/"
                                    target="_blank">Get This App
                                 </a>
                             </span>
@@ -138,7 +138,7 @@
     <record id="view_hr_leave_configuration_inherited" model="ir.ui.view">
         <field name="name">Leave Advanced Features</field>
         <field name="model">res.config.settings</field>
-        <field name="inherit_id" ref="hr_leave_request_aliasing.res_config_settings_view_form"/>
+        <field name="inherit_id" ref="hr_leave_request_aliasing.view_hr_leave_configuration"/>
         <field name="arch" type="xml">
             <xpath expr="//div[@data-key='hr_leave_request_aliasing']" position="inside">
                 <style>
@@ -163,9 +163,9 @@
                             <label for="module_hr_employee_shift"/>
                             <field name="test_module_hr_employee_shift" invisible="True"/>
                             <span class="label danger"
-                                  invisible="test_module_hr_employee_shift == False">
+                                  attrs="{'invisible':[('test_module_hr_employee_shift','=', False)]}">
                                 Module is not Present in Your Repository.
-                                <a href="https://www.odoo.com/apps/modules/17.0/hr_employee_shift/"
+                                <a href="https://www.odoo.com/apps/modules/13.0/hr_employee_shift/"
                                    target="_blank">Get This App
                                 </a>
                             </span>
@@ -182,9 +182,9 @@
                             <label for="module_hr_vacation_mngmt"/>
                             <field name="test_module_hr_vacation_mngmt" invisible="True"/>
                             <span class="label danger"
-                                  invisible="test_module_hr_vacation_mngmt == False">
+                                  attrs="{'invisible':[('test_module_hr_vacation_mngmt','=', False)]}">
                                 Module is not Present in Your Repository.
-                                <a href="https://www.odoo.com/apps/modules/17.0/hr_vacation_mngmt/"
+                                <a href="https://www.odoo.com/apps/modules/13.0/hr_vacation_mngmt/"
                                    target="_blank">Get This App
                                 </a>
                             </span>
